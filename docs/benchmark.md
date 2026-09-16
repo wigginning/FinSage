@@ -1,5 +1,7 @@
 # FinSage Evaluation (FinEval)
 
+> 中文版：请见 [`benchmark.zh-CN.md`](benchmark.zh-CN.md)
+
 This document describes the FinEval benchmark suite and how to run/report it. It follows the
 honesty rules of `AGENTS.md` (§10 / §31.10): **benchmark results are produced only by actually
 running the suite with a configured executor; fabricated or self-rated numbers are forbidden.**

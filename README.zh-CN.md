@@ -167,10 +167,10 @@ FinEval 套件自带确定性数据集与 runner。由于打分依赖已配置�
 
 | 文档 | 用途 |
 |---|---|
-| [`docs/architecture.md`](docs/architecture.md) | 架构总览 + 决策记录（ADR）流程 |
-| [`docs/workflows.md`](docs/workflows.md) | 业务流程：文档摄取管道、四大 LangGraph 工作流、API 一览 |
-| [`docs/benchmark.md`](docs/benchmark.md) | FinEval 如何工作、如何运行与上报（仅如实指标） |
-| [`docs/security.md`](docs/security.md) | 安全模型与信任边界（§26.16 / §31.7） |
+| [`docs/architecture.zh-CN.md`](docs/architecture.zh-CN.md) | 架构总览 + 决策记录（ADR）流程 |
+| [`docs/workflows.zh-CN.md`](docs/workflows.zh-CN.md) | 业务流程：文档摄取管道、四大 LangGraph 工作流、API 一览 |
+| [`docs/benchmark.zh-CN.md`](docs/benchmark.zh-CN.md) | FinEval 如何工作、如何运行与上报（仅如实指标） |
+| [`docs/security.zh-CN.md`](docs/security.zh-CN.md) | 安全模型与信任边界（§26.16 / §31.7） |
 | [`SECURITY.md`](SECURITY.md) | 安全漏洞报告与支持版本 |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | 贡献指南 |
 | [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) | 社区行为准则 |

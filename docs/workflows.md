@@ -1,5 +1,7 @@
 # FinSage Workflows & Business Processes
 
+> 中文版：请见 [`workflows.zh-CN.md`](workflows.zh-CN.md)
+
 This document describes the end-to-end business processes of FinSage: how documents are
 ingested, how a research question travels through the system, and what each of the four
 LangGraph workflows does. Node names and routing conditions below reflect the actual graph

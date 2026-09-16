@@ -179,6 +179,10 @@ See [`docs/benchmark.md`](docs/benchmark.md).
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | Contribution guide |
 | [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) | Community code of conduct |
 
+Chinese versions of the docs above: [`architecture.zh-CN.md`](docs/architecture.zh-CN.md) ·
+[`workflows.zh-CN.md`](docs/workflows.zh-CN.md) · [`benchmark.zh-CN.md`](docs/benchmark.zh-CN.md) ·
+[`security.zh-CN.md`](docs/security.zh-CN.md).
+
 ## Security
 
 - Never commit real secrets. Only `.env.example` / `.env.local.example` samples are tracked.

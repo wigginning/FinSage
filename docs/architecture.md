@@ -1,5 +1,7 @@
 # FinSage Architecture
 
+> 中文版：请见 [`architecture.zh-CN.md`](architecture.zh-CN.md)
+
 This document summarizes the FinSage architecture. The full-stack engineering spec and the
 ADR records (design decisions and their status) are internal working documents and are not
 published with this repository.

@@ -1,5 +1,7 @@
 # FinSage Security Model
 
+> 中文版：请见 [`security.zh-CN.md`](security.zh-CN.md)
+
 This document states FinSage's security model and trust boundaries. It codifies §26.16 (Frontend
 Security Contract) and the security rules of `AGENTS.md` (§31.7 equivalent) into a single,
 operational reference.
