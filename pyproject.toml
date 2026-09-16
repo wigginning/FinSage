@@ -1,0 +1,103 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "finsage"
+version = "0.1.0"
+description = "FinSage - 金融研究问答平台（混合 RAG + LangGraph Workflow + 确定性金融引擎）"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [{ name = "FinSage Maintainers" }]
+
+# 冻结技术栈依赖（架构冻结，禁止替换，见规格 §1/§2 与 AGENTS.md）
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "pydantic>=2.7",
+    "pydantic-settings>=2.3",
+    "langgraph>=0.2",
+    "langchain-core>=0.3",
+    "pymilvus>=2.4",
+    "PyMuPDF>=1.24",
+    "sqlalchemy>=2.0",
+    "pymysql>=1.1",
+    "redis>=5.0",
+    "akshare>=1.14",
+    "baostock>=0.8",
+    "yfinance>=0.2",
+    # 免费无 token 的 A 股数据源（参考 daily_stock_analysis 引入，高优先）。
+    "efinance>=0.4",
+    "pytdx>=1.72",
+    # 东财反爬补丁的随机 UA（opt-in，见 eastmoney_patch）。
+    "fake-useragent>=1.4",
+    "python-dotenv>=1.0",
+    "requests>=2.31",
+    "httpx>=0.27",
+    # 锁定 1.x：m04/MCP 层按 FastMCP 1.x 契约开发并验收；2.x 移除 mcp.server.fastmcp（破坏性变更）
+    "mcp>=1.2,<2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "alembic>=1.13",
+    "fakeredis>=2.23",
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "pytest-cov>=5.0",
+    "ruff>=0.4",
+    "mypy>=1.10",
+    "pyright>=1.1",
+]
+# P2 镜像瘦身：BGE-M3 嵌入/重排相关重型依赖（torch 系）拆为可选 extra。
+# API 基础镜像不再默认拉取 ~526MB torch；启用检索/重排时才安装。
+retrieval = [
+    "sentence-transformers>=3.0",
+    "FlagEmbedding>=1.2",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-ra -q"
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "C4", "SIM"]
+
+[tool.ruff.lint.per-file-ignores]
+# 生成的 alembic 迁移：整段编译 DDL 以单行串落盘，E501 不豁免会造成误报；
+# 变更 schema 时通过 scripts/gen_migrations.py 再生成。
+"migrations/versions/*.py" = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["finsage"]
+
+[tool.mypy]
+python_version = "3.11"
+plugins = ["pydantic.mypy"]
+ignore_missing_imports = true
+check_untyped_defs = true
+
+# numpy>=2.3 的 __init__.pyi 使用 PEP 695 `type` 语句，mypy 在 python_version=3.11
+# 下拒绝解析该 stub 并中止**全部**检查（errors prevented further checking），
+# 使 `mypy src` 这道门禁完全失效。src/ 不直接 import numpy（经 pandas/yfinance
+# 传递引入），因此跳过跟随其 stub 不损失任何本项目的类型信息。
+# 不改 python_version=3.11：它与 requires-python>=3.11 及 CI 运行时一致，
+# 负责拦住 3.12+ 才有的语法进入源码。
+[[tool.mypy.overrides]]
+module = ["numpy", "numpy.*"]
+follow_imports = "skip"
+follow_imports_for_stubs = true
+
+[tool.pyright]
+pythonVersion = "3.11"
+typeCheckingMode = "basic"

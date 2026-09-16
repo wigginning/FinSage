@@ -1,0 +1,549 @@
+{
+  "data": [
+    {
+      "id": "page-index",
+      "title": "研究工作台",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787470627007,
+      "canvasData": {
+        "x": 0,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 1012,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-10c13b15",
+          "measuredAt": 1787476053093
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/index.html",
+        "interactions": [
+          {
+            "domId": "nav-logo",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "返回首页"
+          },
+          {
+            "domId": "nav-index",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "研究工作台"
+          },
+          {
+            "domId": "nav-companies",
+            "targetPageId": "page-companies",
+            "hideEdge": true,
+            "transitionLabel": "公司库"
+          },
+          {
+            "domId": "nav-documents",
+            "targetPageId": "page-documents",
+            "hideEdge": true,
+            "transitionLabel": "文档库"
+          },
+          {
+            "domId": "nav-history",
+            "targetPageId": "page-history",
+            "hideEdge": true,
+            "transitionLabel": "研究历史"
+          },
+          {
+            "domId": "nav-settings",
+            "targetPageId": "page-settings",
+            "hideEdge": true,
+            "transitionLabel": "设置"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-research-running",
+      "title": "研究执行中",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787470627007,
+      "canvasData": {
+        "x": 480,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 1301,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-df48ac94",
+          "measuredAt": 1787476053093
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/research-running.html",
+        "interactions": [
+          {
+            "domId": "nav-logo",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "返回首页"
+          },
+          {
+            "domId": "nav-index",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "研究工作台"
+          },
+          {
+            "domId": "nav-companies",
+            "targetPageId": "page-companies",
+            "hideEdge": true,
+            "transitionLabel": "公司库"
+          },
+          {
+            "domId": "nav-documents",
+            "targetPageId": "page-documents",
+            "hideEdge": true,
+            "transitionLabel": "文档库"
+          },
+          {
+            "domId": "nav-history",
+            "targetPageId": "page-history",
+            "hideEdge": true,
+            "transitionLabel": "研究历史"
+          },
+          {
+            "domId": "nav-settings",
+            "targetPageId": "page-settings",
+            "hideEdge": true,
+            "transitionLabel": "设置"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-company-detail",
+      "title": "公司详情",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787470627007,
+      "canvasData": {
+        "x": 960,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 1113,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-4a653103",
+          "measuredAt": 1787476053093
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/company-detail.html",
+        "interactions": [
+          {
+            "domId": "nav-logo",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "返回首页"
+          },
+          {
+            "domId": "nav-index",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "研究工作台"
+          },
+          {
+            "domId": "nav-companies",
+            "targetPageId": "page-companies",
+            "hideEdge": true,
+            "transitionLabel": "公司库"
+          },
+          {
+            "domId": "nav-documents",
+            "targetPageId": "page-documents",
+            "hideEdge": true,
+            "transitionLabel": "文档库"
+          },
+          {
+            "domId": "nav-history",
+            "targetPageId": "page-history",
+            "hideEdge": true,
+            "transitionLabel": "研究历史"
+          },
+          {
+            "domId": "nav-settings",
+            "targetPageId": "page-settings",
+            "hideEdge": true,
+            "transitionLabel": "设置"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-documents",
+      "title": "文档库",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787470627007,
+      "canvasData": {
+        "x": 1440,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 1065,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-4d03790a",
+          "measuredAt": 1787476053093
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/documents.html",
+        "interactions": [
+          {
+            "domId": "nav-logo",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "返回首页"
+          },
+          {
+            "domId": "nav-index",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "研究工作台"
+          },
+          {
+            "domId": "nav-companies",
+            "targetPageId": "page-companies",
+            "hideEdge": true,
+            "transitionLabel": "公司库"
+          },
+          {
+            "domId": "nav-documents",
+            "targetPageId": "page-documents",
+            "hideEdge": true,
+            "transitionLabel": "文档库"
+          },
+          {
+            "domId": "nav-history",
+            "targetPageId": "page-history",
+            "hideEdge": true,
+            "transitionLabel": "研究历史"
+          },
+          {
+            "domId": "nav-settings",
+            "targetPageId": "page-settings",
+            "hideEdge": true,
+            "transitionLabel": "设置"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-history",
+      "title": "研究历史",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787470627007,
+      "canvasData": {
+        "x": 1920,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 914,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-32d65792",
+          "measuredAt": 1787476053093
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/history.html",
+        "interactions": [
+          {
+            "domId": "nav-logo",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "返回首页"
+          },
+          {
+            "domId": "nav-index",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "研究工作台"
+          },
+          {
+            "domId": "nav-companies",
+            "targetPageId": "page-companies",
+            "hideEdge": true,
+            "transitionLabel": "公司库"
+          },
+          {
+            "domId": "nav-documents",
+            "targetPageId": "page-documents",
+            "hideEdge": true,
+            "transitionLabel": "文档库"
+          },
+          {
+            "domId": "nav-history",
+            "targetPageId": "page-history",
+            "hideEdge": true,
+            "transitionLabel": "研究历史"
+          },
+          {
+            "domId": "nav-settings",
+            "targetPageId": "page-settings",
+            "hideEdge": true,
+            "transitionLabel": "设置"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-settings",
+      "title": "设置",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787470627007,
+      "canvasData": {
+        "x": 2400,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 1536,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-8f1b433e",
+          "measuredAt": 1787476053093
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/settings.html",
+        "interactions": [
+          {
+            "domId": "nav-logo",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "返回首页"
+          },
+          {
+            "domId": "nav-index",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "研究工作台"
+          },
+          {
+            "domId": "nav-companies",
+            "targetPageId": "page-companies",
+            "hideEdge": true,
+            "transitionLabel": "公司库"
+          },
+          {
+            "domId": "nav-documents",
+            "targetPageId": "page-documents",
+            "hideEdge": true,
+            "transitionLabel": "文档库"
+          },
+          {
+            "domId": "nav-history",
+            "targetPageId": "page-history",
+            "hideEdge": true,
+            "transitionLabel": "研究历史"
+          },
+          {
+            "domId": "nav-settings",
+            "targetPageId": "page-settings",
+            "hideEdge": true,
+            "transitionLabel": "设置"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-companies",
+      "title": "公司库",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787472458000,
+      "canvasData": {
+        "x": 2880,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 1023,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-ff3df33c",
+          "measuredAt": 1787476053093
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/companies.html",
+        "interactions": [
+          {
+            "domId": "nav-logo",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "返回首页"
+          },
+          {
+            "domId": "nav-index",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "研究工作台"
+          },
+          {
+            "domId": "nav-companies",
+            "targetPageId": "page-companies",
+            "hideEdge": true,
+            "transitionLabel": "公司库"
+          },
+          {
+            "domId": "nav-documents",
+            "targetPageId": "page-documents",
+            "hideEdge": true,
+            "transitionLabel": "文档库"
+          },
+          {
+            "domId": "nav-history",
+            "targetPageId": "page-history",
+            "hideEdge": true,
+            "transitionLabel": "研究历史"
+          },
+          {
+            "domId": "nav-settings",
+            "targetPageId": "page-settings",
+            "hideEdge": true,
+            "transitionLabel": "设置"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-document-detail",
+      "title": "文档详情",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787472458001,
+      "canvasData": {
+        "x": 3360,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 1704,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-b57ae429",
+          "measuredAt": 1787476053093
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/document-detail.html",
+        "interactions": [
+          {
+            "domId": "nav-logo",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "返回首页"
+          },
+          {
+            "domId": "nav-index",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "研究工作台"
+          },
+          {
+            "domId": "nav-companies",
+            "targetPageId": "page-companies",
+            "hideEdge": true,
+            "transitionLabel": "公司库"
+          },
+          {
+            "domId": "nav-documents",
+            "targetPageId": "page-documents",
+            "hideEdge": true,
+            "transitionLabel": "文档库"
+          },
+          {
+            "domId": "nav-history",
+            "targetPageId": "page-history",
+            "hideEdge": true,
+            "transitionLabel": "研究历史"
+          },
+          {
+            "domId": "nav-settings",
+            "targetPageId": "page-settings",
+            "hideEdge": true,
+            "transitionLabel": "设置"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-research-result",
+      "title": "研究结论",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1787472458002,
+      "canvasData": {
+        "x": 3840,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 2507,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-09552892",
+          "measuredAt": 1787476053093
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/research-result.html",
+        "interactions": [
+          {
+            "domId": "nav-logo",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "返回首页"
+          },
+          {
+            "domId": "nav-index",
+            "targetPageId": "page-index",
+            "hideEdge": true,
+            "transitionLabel": "研究工作台"
+          },
+          {
+            "domId": "nav-companies",
+            "targetPageId": "page-companies",
+            "hideEdge": true,
+            "transitionLabel": "公司库"
+          },
+          {
+            "domId": "nav-documents",
+            "targetPageId": "page-documents",
+            "hideEdge": true,
+            "transitionLabel": "文档库"
+          },
+          {
+            "domId": "nav-history",
+            "targetPageId": "page-history",
+            "hideEdge": true,
+            "transitionLabel": "研究历史"
+          },
+          {
+            "domId": "nav-settings",
+            "targetPageId": "page-settings",
+            "hideEdge": true,
+            "transitionLabel": "设置"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "autoLayout": true,
+    "deviceType": "desktop",
+    "projectName": "FinSage 前端 UI"
+  }
+}

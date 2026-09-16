@@ -1,0 +1,28 @@
+# FinSage 容器级联网覆盖（非冻结；仅补充 base compose 在 app 服务内缺失的服务名映射）
+#
+# base docker-compose.yml 的 app 服务只覆盖了 FIN_MILVUS_HOST/PORT，
+# 但 FIN_DB_URL / FIN_REDIS_URL 仍沿用 .env 的 localhost，在容器内会指向
+# 容器自身回环而连接失败。此处用 docker 服务名补齐，使
+# `docker compose --profile app up -d app` 可真正联通。
+#
+# 规则：本文件只新增/覆盖服务的 environment / build args，绝不改动中间件定义与架构。
+#
+# 端口：宿主 8237 落在 Windows Hyper-V 动态保留段（8186-8285，见
+# `netsh interface ipv4 show excludedportrange protocol=tcp`），Docker 无法绑定。
+# 故 .env 改用 FIN_PORT=9237，web 镜像的 NEXT_PUBLIC_* 经 build arg 同步。
+
+services:
+  web:
+    build:
+      args:
+        # NEXT_PUBLIC_* 为构建期内联，端口必须在构建时确定且与 FIN_PORT 一致。
+        API_BASE_URL: http://localhost:${FIN_PORT:-8237}/api/v1
+
+  app:
+    environment:
+      # 容器内走 docker 服务名（base compose 端口映射对内为 3306 / 6379）。
+      FIN_DB_URL: mysql+pymysql://finsage:finsage_dev_pw@mysql:3306/finsage?charset=utf8mb4
+      FIN_REDIS_URL: redis://redis:6379/0
+      # Milvus 已在 base compose 覆盖为 milvus / 19530；此处显式声明保持一致。
+      FIN_MILVUS_HOST: milvus
+      FIN_MILVUS_PORT: "19530"

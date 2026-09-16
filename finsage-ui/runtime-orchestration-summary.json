@@ -1,0 +1,2421 @@
+{
+  "schemaVersion": "1.0",
+  "skillProvenance": {
+    "name": "solo-design",
+    "version": "2026.08.06.19.15.08",
+    "version_source": "skill-release-manifest.json",
+    "schema_version": "1.0",
+    "release": "prompt-base-cloud-ssot-migration",
+    "read_status": "loaded"
+  },
+  "project": {
+    "operation": "create",
+    "resolvedLane": "complex_html_page",
+    "projectName": "FinSage 前端 UI",
+    "deviceType": "desktop",
+    "designRead": "金融研究 SaaS / 专业分析师 / 机构严谨风 / 高密度信息 / 避免营销感与柔和圆角",
+    "designDials": {
+      "layoutVariance": 3,
+      "motionIntensity": 2,
+      "visualDensity": 4
+    },
+    "styleDefinitionBrief": "专业机构金融风：冷灰底色 + 深靛蓝主色，高密度数据表格，克制卡片，强调证据链与审计感。",
+    "selectedIntentWorkflowRead": true,
+    "contextRequirementsLoaded": [
+      {
+        "path": "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+        "readStatus": "loaded",
+        "bodyRead": true,
+        "recordedAt": "2026-08-23T07:38:59.662380+00:00"
+      },
+      {
+        "path": "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+        "readStatus": "loaded",
+        "bodyRead": true,
+        "recordedAt": "2026-08-23T07:38:59.662380+00:00"
+      },
+      {
+        "path": "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md",
+        "readStatus": "loaded",
+        "bodyRead": true,
+        "recordedAt": "2026-08-23T07:38:59.662380+00:00"
+      },
+      {
+        "path": "delivery-quality/page-rendering-quality-gate.md",
+        "readStatus": "loaded",
+        "bodyRead": true,
+        "recordedAt": "2026-08-23T07:38:59.662380+00:00"
+      },
+      {
+        "path": "delivery-quality/design-artifact-validation.md",
+        "readStatus": "loaded",
+        "bodyRead": true,
+        "recordedAt": "2026-08-23T07:38:59.662380+00:00"
+      },
+      {
+        "path": "delivery-quality/delivery-evidence-contract.md",
+        "readStatus": "loaded",
+        "bodyRead": true,
+        "recordedAt": "2026-08-23T07:38:59.662380+00:00"
+      },
+      {
+        "path": "visual-experience/visual-experience-guidelines.md",
+        "readStatus": "loaded",
+        "bodyRead": true,
+        "recordedAt": "2026-08-23T07:38:59.662380+00:00"
+      },
+      {
+        "path": "visual-experience/visual-checkpoint-protocol.md",
+        "readStatus": "loaded",
+        "bodyRead": true,
+        "recordedAt": "2026-08-23T07:38:59.662380+00:00"
+      },
+      {
+        "path": "intent-workflows/intent-project-complex-build/INTENT_WORKFLOW.md",
+        "readStatus": "loaded",
+        "bodyRead": true,
+        "recordedAt": "2026-08-23T07:38:59.662380+00:00"
+      },
+      {
+        "path": "intent-workflows/intent-project-complex-build/start-complex-project-build.md",
+        "readStatus": "loaded",
+        "bodyRead": true,
+        "recordedAt": "2026-08-23T07:38:59.662380+00:00"
+      },
+      {
+        "path": "intent-workflows/intent-project-complex-build/00-requirement-and-style-intake.md",
+        "readStatus": "loaded",
+        "bodyRead": true,
+        "recordedAt": "2026-08-23T07:38:59.662380+00:00"
+      },
+      {
+        "path": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+        "readStatus": "loaded",
+        "bodyRead": true,
+        "recordedAt": "2026-08-23T07:38:59.662380+00:00"
+      },
+      {
+        "path": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md",
+        "readStatus": "loaded",
+        "bodyRead": true,
+        "recordedAt": "2026-08-23T07:38:59.662380+00:00"
+      },
+      {
+        "path": "intent-workflows/intent-project-complex-build/orchestration-summary-fields.md",
+        "readStatus": "loaded",
+        "bodyRead": true,
+        "recordedAt": "2026-08-23T07:38:59.662380+00:00"
+      },
+      {
+        "path": "shared-runtime/design-artifact-formats/design-project-file-format.md",
+        "readStatus": "loaded",
+        "bodyRead": true,
+        "recordedAt": "2026-08-23T07:38:59.662380+00:00"
+      }
+    ],
+    "contextReadScope": [
+      "intent-workflows/intent-project-complex-build/*.md",
+      "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+      "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md",
+      "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+      "shared-runtime/design-artifact-formats/design-project-file-format.md",
+      "delivery-quality/*.md",
+      "visual-experience/*.md"
+    ],
+    "readScopeLedger": [
+      {
+        "phase": "preflight",
+        "scope": "context-requirements",
+        "recordedAt": "2026-08-23T07:38:59.662380+00:00"
+      },
+      {
+        "actor": "page-sub-agent",
+        "lane": "complex_html_page",
+        "path": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+        "reason": "page runtime guide",
+        "scopeClass": "page-runtime",
+        "declaredBeforeRead": true,
+        "recordedAt": "2026-08-23T07:43:51.594Z",
+        "nodeId": "page-index",
+        "htmlSrc": "pages/index.html"
+      },
+      {
+        "actor": "page-sub-agent",
+        "lane": "complex_html_page",
+        "path": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md",
+        "reason": "dispatch contract",
+        "scopeClass": "dispatch-contract",
+        "declaredBeforeRead": true,
+        "recordedAt": "2026-08-23T07:43:51.594Z",
+        "nodeId": "page-index",
+        "htmlSrc": "pages/index.html"
+      }
+    ],
+    "cssPreflightEvidence": {
+      "scriptPath": "shared-runtime/deterministic-tooling/apply-html-head-contract.mjs",
+      "cssFilePath": "colors_and_type.css",
+      "preflightOutputPath": ".preflight/preflight.html",
+      "exitCode": 0,
+      "semanticTokenFallback": "present",
+      "themeVarsPresent": true,
+      "tailwindCdnPresent": true,
+      "lucidePresent": true,
+      "recordedAt": "2026-08-23T07:38:59.662380+00:00",
+      "brandPrefix": "finsage",
+      "prefixMode": "standard"
+    },
+    "generationTree": {
+      "version": "1.0",
+      "root": {
+        "nodeId": "root",
+        "kind": "root",
+        "status": "generated",
+        "children": [
+          {
+            "nodeId": "gen-project-shell",
+            "kind": "project-shell",
+            "status": "pending",
+            "output": "partials/project-shell.html",
+            "sharedRegions": [
+              "header",
+              "sidebar",
+              "main-wrapper",
+              "footer",
+              "brand-css",
+              "type-scale",
+              "radius-shadow-model"
+            ],
+            "privateRegions": [],
+            "mutableSlots": [
+              "slot-active-nav-key",
+              "slot-page-title",
+              "slot-main-content"
+            ],
+            "children": [
+              {
+                "nodeId": "page-index",
+                "kind": "page-leaf",
+                "status": "pending",
+                "output": "pages/index.html",
+                "sharedRegions": [
+                  "header",
+                  "sidebar",
+                  "main-wrapper",
+                  "footer"
+                ],
+                "privateRegions": [
+                  "slot-main-content"
+                ],
+                "mutableSlots": [
+                  "slot-active-nav-key",
+                  "slot-page-title",
+                  "slot-main-content"
+                ],
+                "dependencies": [
+                  "gen-project-shell"
+                ],
+                "children": []
+              },
+              {
+                "nodeId": "page-research-running",
+                "kind": "page-leaf",
+                "status": "pending",
+                "output": "pages/research-running.html",
+                "sharedRegions": [
+                  "header",
+                  "sidebar",
+                  "main-wrapper",
+                  "footer"
+                ],
+                "privateRegions": [
+                  "slot-main-content"
+                ],
+                "mutableSlots": [
+                  "slot-active-nav-key",
+                  "slot-page-title",
+                  "slot-main-content"
+                ],
+                "dependencies": [
+                  "gen-project-shell"
+                ],
+                "children": []
+              },
+              {
+                "nodeId": "page-research-result",
+                "kind": "page-leaf",
+                "status": "pending",
+                "output": "pages/research-result.html",
+                "sharedRegions": [
+                  "header",
+                  "sidebar",
+                  "main-wrapper",
+                  "footer"
+                ],
+                "privateRegions": [
+                  "slot-main-content"
+                ],
+                "mutableSlots": [
+                  "slot-active-nav-key",
+                  "slot-page-title",
+                  "slot-main-content"
+                ],
+                "dependencies": [
+                  "gen-project-shell"
+                ],
+                "children": []
+              },
+              {
+                "nodeId": "page-companies",
+                "kind": "page-leaf",
+                "status": "pending",
+                "output": "pages/companies.html",
+                "sharedRegions": [
+                  "header",
+                  "sidebar",
+                  "main-wrapper",
+                  "footer"
+                ],
+                "privateRegions": [
+                  "slot-main-content"
+                ],
+                "mutableSlots": [
+                  "slot-active-nav-key",
+                  "slot-page-title",
+                  "slot-main-content"
+                ],
+                "dependencies": [
+                  "gen-project-shell"
+                ],
+                "children": []
+              },
+              {
+                "nodeId": "page-company-detail",
+                "kind": "page-leaf",
+                "status": "pending",
+                "output": "pages/company-detail.html",
+                "sharedRegions": [
+                  "header",
+                  "sidebar",
+                  "main-wrapper",
+                  "footer"
+                ],
+                "privateRegions": [
+                  "slot-main-content"
+                ],
+                "mutableSlots": [
+                  "slot-active-nav-key",
+                  "slot-page-title",
+                  "slot-main-content"
+                ],
+                "dependencies": [
+                  "gen-project-shell"
+                ],
+                "children": []
+              },
+              {
+                "nodeId": "page-documents",
+                "kind": "page-leaf",
+                "status": "pending",
+                "output": "pages/documents.html",
+                "sharedRegions": [
+                  "header",
+                  "sidebar",
+                  "main-wrapper",
+                  "footer"
+                ],
+                "privateRegions": [
+                  "slot-main-content"
+                ],
+                "mutableSlots": [
+                  "slot-active-nav-key",
+                  "slot-page-title",
+                  "slot-main-content"
+                ],
+                "dependencies": [
+                  "gen-project-shell"
+                ],
+                "children": []
+              },
+              {
+                "nodeId": "page-document-detail",
+                "kind": "page-leaf",
+                "status": "pending",
+                "output": "pages/document-detail.html",
+                "sharedRegions": [
+                  "header",
+                  "sidebar",
+                  "main-wrapper",
+                  "footer"
+                ],
+                "privateRegions": [
+                  "slot-main-content"
+                ],
+                "mutableSlots": [
+                  "slot-active-nav-key",
+                  "slot-page-title",
+                  "slot-main-content"
+                ],
+                "dependencies": [
+                  "gen-project-shell"
+                ],
+                "children": []
+              },
+              {
+                "nodeId": "page-history",
+                "kind": "page-leaf",
+                "status": "pending",
+                "output": "pages/history.html",
+                "sharedRegions": [
+                  "header",
+                  "sidebar",
+                  "main-wrapper",
+                  "footer"
+                ],
+                "privateRegions": [
+                  "slot-main-content"
+                ],
+                "mutableSlots": [
+                  "slot-active-nav-key",
+                  "slot-page-title",
+                  "slot-main-content"
+                ],
+                "dependencies": [
+                  "gen-project-shell"
+                ],
+                "children": []
+              },
+              {
+                "nodeId": "page-settings",
+                "kind": "page-leaf",
+                "status": "pending",
+                "output": "pages/settings.html",
+                "sharedRegions": [
+                  "header",
+                  "sidebar",
+                  "main-wrapper",
+                  "footer"
+                ],
+                "privateRegions": [
+                  "slot-main-content"
+                ],
+                "mutableSlots": [
+                  "slot-active-nav-key",
+                  "slot-page-title",
+                  "slot-main-content"
+                ],
+                "dependencies": [
+                  "gen-project-shell"
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "mobileNavigation": {
+      "applies": false
+    },
+    "sharedProjectShellContract": {
+      "navigationShell": "web-app-sidebar",
+      "header": {
+        "heightPx": 64,
+        "layout": "full-width top bar with logo, global search, user avatar"
+      },
+      "sidebar": {
+        "widthPx": 240,
+        "position": "fixed-left",
+        "items": [
+          {
+            "key": "workspace",
+            "label": "研究工作台",
+            "icon": "layout-dashboard"
+          },
+          {
+            "key": "companies",
+            "label": "公司库",
+            "icon": "building-2"
+          },
+          {
+            "key": "documents",
+            "label": "文档库",
+            "icon": "file-text"
+          },
+          {
+            "key": "history",
+            "label": "研究历史",
+            "icon": "history"
+          },
+          {
+            "key": "settings",
+            "label": "设置",
+            "icon": "settings"
+          }
+        ]
+      },
+      "mainContent": {
+        "marginLeftPx": 240,
+        "paddingPx": 32,
+        "maxWidthPx": 1440
+      },
+      "radiusScale": {
+        "sm": 4,
+        "md": 8,
+        "lg": 12,
+        "xl": 16
+      },
+      "surfaceDepthModel": "static-surfaces-border-led",
+      "typographySystem": {
+        "title": "Inter / Noto Sans SC",
+        "body": "Inter / Noto Sans SC",
+        "mono": "JetBrains Mono / Noto Sans Mono"
+      }
+    },
+    "dispatchPreflightManifest": [
+      {
+        "recorded_at": "2026-08-23T07:43:51.594Z",
+        "generatedBy": "build-page-dispatch-manifest.mjs",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "packetType": "ComplexPagePacket",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "taskLinePresent": true,
+        "outputPathPresent": true,
+        "sharedTemplate": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+        "nodeId": "page-index",
+        "htmlSrc": "pages/index.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/index.html",
+          "assets/"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json",
+          "restore-contract-report.json",
+          "page-generation-summary.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/index.html",
+            "assets/"
+          ]
+        },
+        "skillRuntime": {
+          "skillDir": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+          "deterministicToolDir": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling",
+          "toolPaths": {
+            "applyHtmlHeadContract": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs",
+            "recordDispatchCompletion": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs",
+            "buildPageDispatchManifest": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\build-page-dispatch-manifest.mjs",
+            "validateDesignWorkspace": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-design-workspace.mjs",
+            "validateFinishReadiness": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs",
+            "validateRestoreContract": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-restore-contract.mjs"
+          },
+          "requiredForPageSubAgent": [
+            "applyHtmlHeadContract",
+            "recordDispatchCompletion"
+          ],
+          "pathInjection": "absolute",
+          "pathContract": "Do not use {SKILL_DIR} placeholders inside Page Sub-Agent packets; use toolPaths.* absolute paths.",
+          "commandTemplates": {
+            "recordDispatchCompletion": "node \"c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\" --node-id=\"page-index\" --html-src=\"pages/index.html\" --status=completed --changed-files=<comma-separated-project-relative-files> --trace-digest=<main-agent-runtime-trace-digest> --tool-ledger-json=<tool-ledger-json-or-file>"
+          }
+        },
+        "cssFilePath": "d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\colors_and_type.css",
+        "htmlFilePath": "d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\pages\\index.html",
+        "brandPrefix": "finsage",
+        "aestheticsMode": "free-explore",
+        "toolDisciplineBlockPresent": true,
+        "fillHtmlHeadCommand": "node \"c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\colors_and_type.css\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\pages\\index.html\" --title=\"研究工作台\" --lang=\"zh-CN\" --prefix=\"finsage\"",
+        "headFillMode": "skeleton-first",
+        "viewportMode": "document-scroll",
+        "completionSchemaExpected": "full",
+        "restoreFields": null,
+        "restoreContractStatus": null,
+        "restoreCompactPacket": null,
+        "deterministicCommands": null,
+        "sourceAuthorityLock": null,
+        "preDispatchFileHashes": {
+          "finsage-ui.design": "4f53f0f126499297eb49791191886a73b2178c2b210774b258b4b3ccf5696659"
+        },
+        "contextPreflight": {
+          "workflowPath": "intent-workflows/intent-project-complex-build/INTENT_WORKFLOW.md",
+          "requiredContextFiles": [
+            "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+            "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+            "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md",
+            "delivery-quality/page-rendering-quality-gate.md",
+            "delivery-quality/design-artifact-validation.md",
+            "delivery-quality/delivery-evidence-contract.md",
+            "visual-experience/visual-experience-guidelines.md",
+            "visual-experience/visual-checkpoint-protocol.md"
+          ],
+          "optionalContextFiles": [],
+          "passed": true
+        },
+        "pageSliceOnly": true,
+        "requiredFieldsPresent": true,
+        "missingFields": [],
+        "fillHtmlHeadCommandValid": true,
+        "mobileNavigation": {
+          "required": false,
+          "appliesToThisPage": false,
+          "canonicalHtmlIncluded": false,
+          "missingFields": []
+        },
+        "persistedToSummary": true,
+        "taskQueryAudited": false,
+        "proofSource": "summary-only",
+        "largeWorkflowFilesInTaskQuery": null
+      },
+      {
+        "recorded_at": "2026-08-23T07:43:51.594Z",
+        "generatedBy": "build-page-dispatch-manifest.mjs",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "packetType": "ComplexPagePacket",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "taskLinePresent": true,
+        "outputPathPresent": true,
+        "sharedTemplate": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+        "nodeId": "page-research-running",
+        "htmlSrc": "pages/research-running.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/research-running.html",
+          "assets/"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json",
+          "restore-contract-report.json",
+          "page-generation-summary.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/research-running.html",
+            "assets/"
+          ]
+        },
+        "skillRuntime": {
+          "skillDir": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+          "deterministicToolDir": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling",
+          "toolPaths": {
+            "applyHtmlHeadContract": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs",
+            "recordDispatchCompletion": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs",
+            "buildPageDispatchManifest": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\build-page-dispatch-manifest.mjs",
+            "validateDesignWorkspace": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-design-workspace.mjs",
+            "validateFinishReadiness": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs",
+            "validateRestoreContract": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-restore-contract.mjs"
+          },
+          "requiredForPageSubAgent": [
+            "applyHtmlHeadContract",
+            "recordDispatchCompletion"
+          ],
+          "pathInjection": "absolute",
+          "pathContract": "Do not use {SKILL_DIR} placeholders inside Page Sub-Agent packets; use toolPaths.* absolute paths.",
+          "commandTemplates": {
+            "recordDispatchCompletion": "node \"c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\" --node-id=\"page-research-running\" --html-src=\"pages/research-running.html\" --status=completed --changed-files=<comma-separated-project-relative-files> --trace-digest=<main-agent-runtime-trace-digest> --tool-ledger-json=<tool-ledger-json-or-file>"
+          }
+        },
+        "cssFilePath": "d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\colors_and_type.css",
+        "htmlFilePath": "d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\pages\\research-running.html",
+        "brandPrefix": "finsage",
+        "aestheticsMode": "free-explore",
+        "toolDisciplineBlockPresent": true,
+        "fillHtmlHeadCommand": "node \"c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\colors_and_type.css\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\pages\\research-running.html\" --title=\"研究执行中\" --lang=\"zh-CN\" --prefix=\"finsage\"",
+        "headFillMode": "skeleton-first",
+        "viewportMode": "document-scroll",
+        "completionSchemaExpected": "full",
+        "restoreFields": null,
+        "restoreContractStatus": null,
+        "restoreCompactPacket": null,
+        "deterministicCommands": null,
+        "sourceAuthorityLock": null,
+        "preDispatchFileHashes": {
+          "finsage-ui.design": "4f53f0f126499297eb49791191886a73b2178c2b210774b258b4b3ccf5696659"
+        },
+        "contextPreflight": {
+          "workflowPath": "intent-workflows/intent-project-complex-build/INTENT_WORKFLOW.md",
+          "requiredContextFiles": [
+            "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+            "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+            "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md",
+            "delivery-quality/page-rendering-quality-gate.md",
+            "delivery-quality/design-artifact-validation.md",
+            "delivery-quality/delivery-evidence-contract.md",
+            "visual-experience/visual-experience-guidelines.md",
+            "visual-experience/visual-checkpoint-protocol.md"
+          ],
+          "optionalContextFiles": [],
+          "passed": true
+        },
+        "pageSliceOnly": true,
+        "requiredFieldsPresent": true,
+        "missingFields": [],
+        "fillHtmlHeadCommandValid": true,
+        "mobileNavigation": {
+          "required": false,
+          "appliesToThisPage": false,
+          "canonicalHtmlIncluded": false,
+          "missingFields": []
+        },
+        "persistedToSummary": true,
+        "taskQueryAudited": false,
+        "proofSource": "summary-only",
+        "largeWorkflowFilesInTaskQuery": null
+      },
+      {
+        "recorded_at": "2026-08-23T07:43:51.594Z",
+        "generatedBy": "build-page-dispatch-manifest.mjs",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "packetType": "ComplexPagePacket",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "taskLinePresent": true,
+        "outputPathPresent": true,
+        "sharedTemplate": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+        "nodeId": "page-research-result",
+        "htmlSrc": "pages/research-result.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/research-result.html",
+          "assets/"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json",
+          "restore-contract-report.json",
+          "page-generation-summary.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/research-result.html",
+            "assets/"
+          ]
+        },
+        "skillRuntime": {
+          "skillDir": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+          "deterministicToolDir": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling",
+          "toolPaths": {
+            "applyHtmlHeadContract": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs",
+            "recordDispatchCompletion": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs",
+            "buildPageDispatchManifest": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\build-page-dispatch-manifest.mjs",
+            "validateDesignWorkspace": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-design-workspace.mjs",
+            "validateFinishReadiness": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs",
+            "validateRestoreContract": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-restore-contract.mjs"
+          },
+          "requiredForPageSubAgent": [
+            "applyHtmlHeadContract",
+            "recordDispatchCompletion"
+          ],
+          "pathInjection": "absolute",
+          "pathContract": "Do not use {SKILL_DIR} placeholders inside Page Sub-Agent packets; use toolPaths.* absolute paths.",
+          "commandTemplates": {
+            "recordDispatchCompletion": "node \"c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\" --node-id=\"page-research-result\" --html-src=\"pages/research-result.html\" --status=completed --changed-files=<comma-separated-project-relative-files> --trace-digest=<main-agent-runtime-trace-digest> --tool-ledger-json=<tool-ledger-json-or-file>"
+          }
+        },
+        "cssFilePath": "d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\colors_and_type.css",
+        "htmlFilePath": "d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\pages\\research-result.html",
+        "brandPrefix": "finsage",
+        "aestheticsMode": "free-explore",
+        "toolDisciplineBlockPresent": true,
+        "fillHtmlHeadCommand": "node \"c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\colors_and_type.css\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\pages\\research-result.html\" --title=\"研究结果\" --lang=\"zh-CN\" --prefix=\"finsage\"",
+        "headFillMode": "skeleton-first",
+        "viewportMode": "document-scroll",
+        "completionSchemaExpected": "full",
+        "restoreFields": null,
+        "restoreContractStatus": null,
+        "restoreCompactPacket": null,
+        "deterministicCommands": null,
+        "sourceAuthorityLock": null,
+        "preDispatchFileHashes": {
+          "finsage-ui.design": "4f53f0f126499297eb49791191886a73b2178c2b210774b258b4b3ccf5696659"
+        },
+        "contextPreflight": {
+          "workflowPath": "intent-workflows/intent-project-complex-build/INTENT_WORKFLOW.md",
+          "requiredContextFiles": [
+            "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+            "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+            "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md",
+            "delivery-quality/page-rendering-quality-gate.md",
+            "delivery-quality/design-artifact-validation.md",
+            "delivery-quality/delivery-evidence-contract.md",
+            "visual-experience/visual-experience-guidelines.md",
+            "visual-experience/visual-checkpoint-protocol.md"
+          ],
+          "optionalContextFiles": [],
+          "passed": true
+        },
+        "pageSliceOnly": true,
+        "requiredFieldsPresent": true,
+        "missingFields": [],
+        "fillHtmlHeadCommandValid": true,
+        "mobileNavigation": {
+          "required": false,
+          "appliesToThisPage": false,
+          "canonicalHtmlIncluded": false,
+          "missingFields": []
+        },
+        "persistedToSummary": true,
+        "taskQueryAudited": false,
+        "proofSource": "summary-only",
+        "largeWorkflowFilesInTaskQuery": null
+      },
+      {
+        "recorded_at": "2026-08-23T07:43:51.594Z",
+        "generatedBy": "build-page-dispatch-manifest.mjs",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "packetType": "ComplexPagePacket",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "taskLinePresent": true,
+        "outputPathPresent": true,
+        "sharedTemplate": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+        "nodeId": "page-companies",
+        "htmlSrc": "pages/companies.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/companies.html",
+          "assets/"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json",
+          "restore-contract-report.json",
+          "page-generation-summary.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/companies.html",
+            "assets/"
+          ]
+        },
+        "skillRuntime": {
+          "skillDir": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+          "deterministicToolDir": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling",
+          "toolPaths": {
+            "applyHtmlHeadContract": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs",
+            "recordDispatchCompletion": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs",
+            "buildPageDispatchManifest": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\build-page-dispatch-manifest.mjs",
+            "validateDesignWorkspace": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-design-workspace.mjs",
+            "validateFinishReadiness": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs",
+            "validateRestoreContract": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-restore-contract.mjs"
+          },
+          "requiredForPageSubAgent": [
+            "applyHtmlHeadContract",
+            "recordDispatchCompletion"
+          ],
+          "pathInjection": "absolute",
+          "pathContract": "Do not use {SKILL_DIR} placeholders inside Page Sub-Agent packets; use toolPaths.* absolute paths.",
+          "commandTemplates": {
+            "recordDispatchCompletion": "node \"c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\" --node-id=\"page-companies\" --html-src=\"pages/companies.html\" --status=completed --changed-files=<comma-separated-project-relative-files> --trace-digest=<main-agent-runtime-trace-digest> --tool-ledger-json=<tool-ledger-json-or-file>"
+          }
+        },
+        "cssFilePath": "d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\colors_and_type.css",
+        "htmlFilePath": "d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\pages\\companies.html",
+        "brandPrefix": "finsage",
+        "aestheticsMode": "free-explore",
+        "toolDisciplineBlockPresent": true,
+        "fillHtmlHeadCommand": "node \"c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\colors_and_type.css\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\pages\\companies.html\" --title=\"公司库\" --lang=\"zh-CN\" --prefix=\"finsage\"",
+        "headFillMode": "skeleton-first",
+        "viewportMode": "document-scroll",
+        "completionSchemaExpected": "full",
+        "restoreFields": null,
+        "restoreContractStatus": null,
+        "restoreCompactPacket": null,
+        "deterministicCommands": null,
+        "sourceAuthorityLock": null,
+        "preDispatchFileHashes": {
+          "finsage-ui.design": "4f53f0f126499297eb49791191886a73b2178c2b210774b258b4b3ccf5696659"
+        },
+        "contextPreflight": {
+          "workflowPath": "intent-workflows/intent-project-complex-build/INTENT_WORKFLOW.md",
+          "requiredContextFiles": [
+            "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+            "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+            "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md",
+            "delivery-quality/page-rendering-quality-gate.md",
+            "delivery-quality/design-artifact-validation.md",
+            "delivery-quality/delivery-evidence-contract.md",
+            "visual-experience/visual-experience-guidelines.md",
+            "visual-experience/visual-checkpoint-protocol.md"
+          ],
+          "optionalContextFiles": [],
+          "passed": true
+        },
+        "pageSliceOnly": true,
+        "requiredFieldsPresent": true,
+        "missingFields": [],
+        "fillHtmlHeadCommandValid": true,
+        "mobileNavigation": {
+          "required": false,
+          "appliesToThisPage": false,
+          "canonicalHtmlIncluded": false,
+          "missingFields": []
+        },
+        "persistedToSummary": true,
+        "taskQueryAudited": false,
+        "proofSource": "summary-only",
+        "largeWorkflowFilesInTaskQuery": null
+      },
+      {
+        "recorded_at": "2026-08-23T07:43:51.594Z",
+        "generatedBy": "build-page-dispatch-manifest.mjs",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "packetType": "ComplexPagePacket",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "taskLinePresent": true,
+        "outputPathPresent": true,
+        "sharedTemplate": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+        "nodeId": "page-company-detail",
+        "htmlSrc": "pages/company-detail.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/company-detail.html",
+          "assets/"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json",
+          "restore-contract-report.json",
+          "page-generation-summary.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/company-detail.html",
+            "assets/"
+          ]
+        },
+        "skillRuntime": {
+          "skillDir": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+          "deterministicToolDir": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling",
+          "toolPaths": {
+            "applyHtmlHeadContract": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs",
+            "recordDispatchCompletion": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs",
+            "buildPageDispatchManifest": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\build-page-dispatch-manifest.mjs",
+            "validateDesignWorkspace": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-design-workspace.mjs",
+            "validateFinishReadiness": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs",
+            "validateRestoreContract": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-restore-contract.mjs"
+          },
+          "requiredForPageSubAgent": [
+            "applyHtmlHeadContract",
+            "recordDispatchCompletion"
+          ],
+          "pathInjection": "absolute",
+          "pathContract": "Do not use {SKILL_DIR} placeholders inside Page Sub-Agent packets; use toolPaths.* absolute paths.",
+          "commandTemplates": {
+            "recordDispatchCompletion": "node \"c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\" --node-id=\"page-company-detail\" --html-src=\"pages/company-detail.html\" --status=completed --changed-files=<comma-separated-project-relative-files> --trace-digest=<main-agent-runtime-trace-digest> --tool-ledger-json=<tool-ledger-json-or-file>"
+          }
+        },
+        "cssFilePath": "d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\colors_and_type.css",
+        "htmlFilePath": "d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\pages\\company-detail.html",
+        "brandPrefix": "finsage",
+        "aestheticsMode": "free-explore",
+        "toolDisciplineBlockPresent": true,
+        "fillHtmlHeadCommand": "node \"c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\colors_and_type.css\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\pages\\company-detail.html\" --title=\"公司详情\" --lang=\"zh-CN\" --prefix=\"finsage\"",
+        "headFillMode": "skeleton-first",
+        "viewportMode": "document-scroll",
+        "completionSchemaExpected": "full",
+        "restoreFields": null,
+        "restoreContractStatus": null,
+        "restoreCompactPacket": null,
+        "deterministicCommands": null,
+        "sourceAuthorityLock": null,
+        "preDispatchFileHashes": {
+          "finsage-ui.design": "4f53f0f126499297eb49791191886a73b2178c2b210774b258b4b3ccf5696659"
+        },
+        "contextPreflight": {
+          "workflowPath": "intent-workflows/intent-project-complex-build/INTENT_WORKFLOW.md",
+          "requiredContextFiles": [
+            "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+            "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+            "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md",
+            "delivery-quality/page-rendering-quality-gate.md",
+            "delivery-quality/design-artifact-validation.md",
+            "delivery-quality/delivery-evidence-contract.md",
+            "visual-experience/visual-experience-guidelines.md",
+            "visual-experience/visual-checkpoint-protocol.md"
+          ],
+          "optionalContextFiles": [],
+          "passed": true
+        },
+        "pageSliceOnly": true,
+        "requiredFieldsPresent": true,
+        "missingFields": [],
+        "fillHtmlHeadCommandValid": true,
+        "mobileNavigation": {
+          "required": false,
+          "appliesToThisPage": false,
+          "canonicalHtmlIncluded": false,
+          "missingFields": []
+        },
+        "persistedToSummary": true,
+        "taskQueryAudited": false,
+        "proofSource": "summary-only",
+        "largeWorkflowFilesInTaskQuery": null
+      },
+      {
+        "recorded_at": "2026-08-23T07:43:51.594Z",
+        "generatedBy": "build-page-dispatch-manifest.mjs",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "packetType": "ComplexPagePacket",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "taskLinePresent": true,
+        "outputPathPresent": true,
+        "sharedTemplate": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+        "nodeId": "page-documents",
+        "htmlSrc": "pages/documents.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/documents.html",
+          "assets/"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json",
+          "restore-contract-report.json",
+          "page-generation-summary.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/documents.html",
+            "assets/"
+          ]
+        },
+        "skillRuntime": {
+          "skillDir": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+          "deterministicToolDir": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling",
+          "toolPaths": {
+            "applyHtmlHeadContract": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs",
+            "recordDispatchCompletion": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs",
+            "buildPageDispatchManifest": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\build-page-dispatch-manifest.mjs",
+            "validateDesignWorkspace": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-design-workspace.mjs",
+            "validateFinishReadiness": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs",
+            "validateRestoreContract": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-restore-contract.mjs"
+          },
+          "requiredForPageSubAgent": [
+            "applyHtmlHeadContract",
+            "recordDispatchCompletion"
+          ],
+          "pathInjection": "absolute",
+          "pathContract": "Do not use {SKILL_DIR} placeholders inside Page Sub-Agent packets; use toolPaths.* absolute paths.",
+          "commandTemplates": {
+            "recordDispatchCompletion": "node \"c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\" --node-id=\"page-documents\" --html-src=\"pages/documents.html\" --status=completed --changed-files=<comma-separated-project-relative-files> --trace-digest=<main-agent-runtime-trace-digest> --tool-ledger-json=<tool-ledger-json-or-file>"
+          }
+        },
+        "cssFilePath": "d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\colors_and_type.css",
+        "htmlFilePath": "d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\pages\\documents.html",
+        "brandPrefix": "finsage",
+        "aestheticsMode": "free-explore",
+        "toolDisciplineBlockPresent": true,
+        "fillHtmlHeadCommand": "node \"c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\colors_and_type.css\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\pages\\documents.html\" --title=\"文档库\" --lang=\"zh-CN\" --prefix=\"finsage\"",
+        "headFillMode": "skeleton-first",
+        "viewportMode": "document-scroll",
+        "completionSchemaExpected": "full",
+        "restoreFields": null,
+        "restoreContractStatus": null,
+        "restoreCompactPacket": null,
+        "deterministicCommands": null,
+        "sourceAuthorityLock": null,
+        "preDispatchFileHashes": {
+          "finsage-ui.design": "4f53f0f126499297eb49791191886a73b2178c2b210774b258b4b3ccf5696659"
+        },
+        "contextPreflight": {
+          "workflowPath": "intent-workflows/intent-project-complex-build/INTENT_WORKFLOW.md",
+          "requiredContextFiles": [
+            "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+            "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+            "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md",
+            "delivery-quality/page-rendering-quality-gate.md",
+            "delivery-quality/design-artifact-validation.md",
+            "delivery-quality/delivery-evidence-contract.md",
+            "visual-experience/visual-experience-guidelines.md",
+            "visual-experience/visual-checkpoint-protocol.md"
+          ],
+          "optionalContextFiles": [],
+          "passed": true
+        },
+        "pageSliceOnly": true,
+        "requiredFieldsPresent": true,
+        "missingFields": [],
+        "fillHtmlHeadCommandValid": true,
+        "mobileNavigation": {
+          "required": false,
+          "appliesToThisPage": false,
+          "canonicalHtmlIncluded": false,
+          "missingFields": []
+        },
+        "persistedToSummary": true,
+        "taskQueryAudited": false,
+        "proofSource": "summary-only",
+        "largeWorkflowFilesInTaskQuery": null
+      },
+      {
+        "recorded_at": "2026-08-23T07:43:51.594Z",
+        "generatedBy": "build-page-dispatch-manifest.mjs",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "packetType": "ComplexPagePacket",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "taskLinePresent": true,
+        "outputPathPresent": true,
+        "sharedTemplate": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+        "nodeId": "page-document-detail",
+        "htmlSrc": "pages/document-detail.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/document-detail.html",
+          "assets/"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json",
+          "restore-contract-report.json",
+          "page-generation-summary.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/document-detail.html",
+            "assets/"
+          ]
+        },
+        "skillRuntime": {
+          "skillDir": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+          "deterministicToolDir": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling",
+          "toolPaths": {
+            "applyHtmlHeadContract": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs",
+            "recordDispatchCompletion": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs",
+            "buildPageDispatchManifest": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\build-page-dispatch-manifest.mjs",
+            "validateDesignWorkspace": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-design-workspace.mjs",
+            "validateFinishReadiness": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs",
+            "validateRestoreContract": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-restore-contract.mjs"
+          },
+          "requiredForPageSubAgent": [
+            "applyHtmlHeadContract",
+            "recordDispatchCompletion"
+          ],
+          "pathInjection": "absolute",
+          "pathContract": "Do not use {SKILL_DIR} placeholders inside Page Sub-Agent packets; use toolPaths.* absolute paths.",
+          "commandTemplates": {
+            "recordDispatchCompletion": "node \"c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\" --node-id=\"page-document-detail\" --html-src=\"pages/document-detail.html\" --status=completed --changed-files=<comma-separated-project-relative-files> --trace-digest=<main-agent-runtime-trace-digest> --tool-ledger-json=<tool-ledger-json-or-file>"
+          }
+        },
+        "cssFilePath": "d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\colors_and_type.css",
+        "htmlFilePath": "d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\pages\\document-detail.html",
+        "brandPrefix": "finsage",
+        "aestheticsMode": "free-explore",
+        "toolDisciplineBlockPresent": true,
+        "fillHtmlHeadCommand": "node \"c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\colors_and_type.css\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\pages\\document-detail.html\" --title=\"文档详情\" --lang=\"zh-CN\" --prefix=\"finsage\"",
+        "headFillMode": "skeleton-first",
+        "viewportMode": "document-scroll",
+        "completionSchemaExpected": "full",
+        "restoreFields": null,
+        "restoreContractStatus": null,
+        "restoreCompactPacket": null,
+        "deterministicCommands": null,
+        "sourceAuthorityLock": null,
+        "preDispatchFileHashes": {
+          "finsage-ui.design": "4f53f0f126499297eb49791191886a73b2178c2b210774b258b4b3ccf5696659"
+        },
+        "contextPreflight": {
+          "workflowPath": "intent-workflows/intent-project-complex-build/INTENT_WORKFLOW.md",
+          "requiredContextFiles": [
+            "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+            "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+            "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md",
+            "delivery-quality/page-rendering-quality-gate.md",
+            "delivery-quality/design-artifact-validation.md",
+            "delivery-quality/delivery-evidence-contract.md",
+            "visual-experience/visual-experience-guidelines.md",
+            "visual-experience/visual-checkpoint-protocol.md"
+          ],
+          "optionalContextFiles": [],
+          "passed": true
+        },
+        "pageSliceOnly": true,
+        "requiredFieldsPresent": true,
+        "missingFields": [],
+        "fillHtmlHeadCommandValid": true,
+        "mobileNavigation": {
+          "required": false,
+          "appliesToThisPage": false,
+          "canonicalHtmlIncluded": false,
+          "missingFields": []
+        },
+        "persistedToSummary": true,
+        "taskQueryAudited": false,
+        "proofSource": "summary-only",
+        "largeWorkflowFilesInTaskQuery": null
+      },
+      {
+        "recorded_at": "2026-08-23T07:43:51.594Z",
+        "generatedBy": "build-page-dispatch-manifest.mjs",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "packetType": "ComplexPagePacket",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "taskLinePresent": true,
+        "outputPathPresent": true,
+        "sharedTemplate": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+        "nodeId": "page-history",
+        "htmlSrc": "pages/history.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/history.html",
+          "assets/"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json",
+          "restore-contract-report.json",
+          "page-generation-summary.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/history.html",
+            "assets/"
+          ]
+        },
+        "skillRuntime": {
+          "skillDir": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+          "deterministicToolDir": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling",
+          "toolPaths": {
+            "applyHtmlHeadContract": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs",
+            "recordDispatchCompletion": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs",
+            "buildPageDispatchManifest": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\build-page-dispatch-manifest.mjs",
+            "validateDesignWorkspace": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-design-workspace.mjs",
+            "validateFinishReadiness": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs",
+            "validateRestoreContract": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-restore-contract.mjs"
+          },
+          "requiredForPageSubAgent": [
+            "applyHtmlHeadContract",
+            "recordDispatchCompletion"
+          ],
+          "pathInjection": "absolute",
+          "pathContract": "Do not use {SKILL_DIR} placeholders inside Page Sub-Agent packets; use toolPaths.* absolute paths.",
+          "commandTemplates": {
+            "recordDispatchCompletion": "node \"c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\" --node-id=\"page-history\" --html-src=\"pages/history.html\" --status=completed --changed-files=<comma-separated-project-relative-files> --trace-digest=<main-agent-runtime-trace-digest> --tool-ledger-json=<tool-ledger-json-or-file>"
+          }
+        },
+        "cssFilePath": "d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\colors_and_type.css",
+        "htmlFilePath": "d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\pages\\history.html",
+        "brandPrefix": "finsage",
+        "aestheticsMode": "free-explore",
+        "toolDisciplineBlockPresent": true,
+        "fillHtmlHeadCommand": "node \"c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\colors_and_type.css\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\pages\\history.html\" --title=\"研究历史\" --lang=\"zh-CN\" --prefix=\"finsage\"",
+        "headFillMode": "skeleton-first",
+        "viewportMode": "document-scroll",
+        "completionSchemaExpected": "full",
+        "restoreFields": null,
+        "restoreContractStatus": null,
+        "restoreCompactPacket": null,
+        "deterministicCommands": null,
+        "sourceAuthorityLock": null,
+        "preDispatchFileHashes": {
+          "finsage-ui.design": "4f53f0f126499297eb49791191886a73b2178c2b210774b258b4b3ccf5696659"
+        },
+        "contextPreflight": {
+          "workflowPath": "intent-workflows/intent-project-complex-build/INTENT_WORKFLOW.md",
+          "requiredContextFiles": [
+            "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+            "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+            "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md",
+            "delivery-quality/page-rendering-quality-gate.md",
+            "delivery-quality/design-artifact-validation.md",
+            "delivery-quality/delivery-evidence-contract.md",
+            "visual-experience/visual-experience-guidelines.md",
+            "visual-experience/visual-checkpoint-protocol.md"
+          ],
+          "optionalContextFiles": [],
+          "passed": true
+        },
+        "pageSliceOnly": true,
+        "requiredFieldsPresent": true,
+        "missingFields": [],
+        "fillHtmlHeadCommandValid": true,
+        "mobileNavigation": {
+          "required": false,
+          "appliesToThisPage": false,
+          "canonicalHtmlIncluded": false,
+          "missingFields": []
+        },
+        "persistedToSummary": true,
+        "taskQueryAudited": false,
+        "proofSource": "summary-only",
+        "largeWorkflowFilesInTaskQuery": null
+      },
+      {
+        "recorded_at": "2026-08-23T07:43:51.594Z",
+        "generatedBy": "build-page-dispatch-manifest.mjs",
+        "packetType": "ComplexPagePacket",
+        "laneContract": {
+          "resolvedLane": "complex_html_page",
+          "packetType": "ComplexPagePacket",
+          "pageRuntimeGuide": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+          "dispatchContract": "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md"
+        },
+        "taskLinePresent": true,
+        "outputPathPresent": true,
+        "sharedTemplate": "intent-workflows/intent-project-complex-build/complex-page-runtime.md",
+        "nodeId": "page-settings",
+        "htmlSrc": "pages/settings.html",
+        "supplementaryReads": [],
+        "allowedWritePaths": [
+          "pages/settings.html",
+          "assets/"
+        ],
+        "forbiddenWriteRoots": [
+          "*.design",
+          "runtime-orchestration-summary.json",
+          "validation-report.json",
+          "finish-readiness-report.json",
+          "restore-contract-report.json",
+          "page-generation-summary.json"
+        ],
+        "toolPolicy": {
+          "todoWriteAllowed": false,
+          "validationScriptsAllowed": false,
+          "previewAllowed": false,
+          "helperScriptsAllowed": false,
+          "designFileWriteAllowed": false,
+          "allowedWritePaths": [
+            "pages/settings.html",
+            "assets/"
+          ]
+        },
+        "skillRuntime": {
+          "skillDir": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design",
+          "deterministicToolDir": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling",
+          "toolPaths": {
+            "applyHtmlHeadContract": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs",
+            "recordDispatchCompletion": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs",
+            "buildPageDispatchManifest": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\build-page-dispatch-manifest.mjs",
+            "validateDesignWorkspace": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-design-workspace.mjs",
+            "validateFinishReadiness": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs",
+            "validateRestoreContract": "c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-restore-contract.mjs"
+          },
+          "requiredForPageSubAgent": [
+            "applyHtmlHeadContract",
+            "recordDispatchCompletion"
+          ],
+          "pathInjection": "absolute",
+          "pathContract": "Do not use {SKILL_DIR} placeholders inside Page Sub-Agent packets; use toolPaths.* absolute paths.",
+          "commandTemplates": {
+            "recordDispatchCompletion": "node \"c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\record-dispatch-completion.mjs\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\" --node-id=\"page-settings\" --html-src=\"pages/settings.html\" --status=completed --changed-files=<comma-separated-project-relative-files> --trace-digest=<main-agent-runtime-trace-digest> --tool-ledger-json=<tool-ledger-json-or-file>"
+          }
+        },
+        "cssFilePath": "d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\colors_and_type.css",
+        "htmlFilePath": "d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\pages\\settings.html",
+        "brandPrefix": "finsage",
+        "aestheticsMode": "free-explore",
+        "toolDisciplineBlockPresent": true,
+        "fillHtmlHeadCommand": "node \"c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\apply-html-head-contract.mjs\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\colors_and_type.css\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\\pages\\settings.html\" --title=\"设置\" --lang=\"zh-CN\" --prefix=\"finsage\"",
+        "headFillMode": "skeleton-first",
+        "viewportMode": "document-scroll",
+        "completionSchemaExpected": "full",
+        "restoreFields": null,
+        "restoreContractStatus": null,
+        "restoreCompactPacket": null,
+        "deterministicCommands": null,
+        "sourceAuthorityLock": null,
+        "preDispatchFileHashes": {
+          "finsage-ui.design": "4f53f0f126499297eb49791191886a73b2178c2b210774b258b4b3ccf5696659"
+        },
+        "contextPreflight": {
+          "workflowPath": "intent-workflows/intent-project-complex-build/INTENT_WORKFLOW.md",
+          "requiredContextFiles": [
+            "shared-runtime/runtime-boundaries/lane-runtime-contracts.md",
+            "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md",
+            "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md",
+            "delivery-quality/page-rendering-quality-gate.md",
+            "delivery-quality/design-artifact-validation.md",
+            "delivery-quality/delivery-evidence-contract.md",
+            "visual-experience/visual-experience-guidelines.md",
+            "visual-experience/visual-checkpoint-protocol.md"
+          ],
+          "optionalContextFiles": [],
+          "passed": true
+        },
+        "pageSliceOnly": true,
+        "requiredFieldsPresent": true,
+        "missingFields": [],
+        "fillHtmlHeadCommandValid": true,
+        "mobileNavigation": {
+          "required": false,
+          "appliesToThisPage": false,
+          "canonicalHtmlIncluded": false,
+          "missingFields": []
+        },
+        "persistedToSummary": true,
+        "taskQueryAudited": false,
+        "proofSource": "summary-only",
+        "largeWorkflowFilesInTaskQuery": null
+      }
+    ],
+    "validationRunDiscipline": {
+      "preDispatchContractCheck": true,
+      "postGenerationWorkspaceValidation": true,
+      "artifactReadinessCheck": true
+    },
+    "validationHistory": [],
+    "validationRepairLedger": [],
+    "validationSnapshot": {},
+    "artifactReadinessEvidence": {},
+    "lowValueCallWatchdog": {
+      "applies": true,
+      "noProgressSignals": [
+        "no_tool_call",
+        "no_artifact_diff",
+        "no_structured_decision"
+      ],
+      "noProgressNextAction": "enter_readiness_or_blocked_summary",
+      "recordedAt": "2026-08-23T07:38:59.662380+00:00"
+    },
+    "sourceAuthorityLock": {
+      "visualAuthority": "engineering-specification",
+      "contentSupplement": "FinSage-V3.4-Full-Stack-Engineering-Spec.md",
+      "browserObservationRole": "none",
+      "mayOverrideVisualAuthority": false,
+      "lockedBeforeDispatch": true
+    },
+    "visualQualityCheckpoints": [
+      {
+        "checkpointId": "vq-anchor",
+        "dimension": "visual-anchor",
+        "expected": "每个页面顶部稳定的 FinSage Logo + 左侧边栏构成识别锚点",
+        "evidenceTarget": "all-pages#shell"
+      },
+      {
+        "checkpointId": "vq-hierarchy",
+        "dimension": "information-hierarchy",
+        "expected": "标题、KPI、表格/卡片、辅助元数据层级分明，证据链清晰可见",
+        "evidenceTarget": "page-research-result#content"
+      },
+      {
+        "checkpointId": "vq-structure",
+        "dimension": "composition-structure",
+        "expected": "左侧 240px 固定边栏 + 主内容区 32px 内边距，1440px 最大宽度，信息密集但不拥挤",
+        "evidenceTarget": "all-pages#layout"
+      },
+      {
+        "checkpointId": "vq-implementation",
+        "dimension": "implementation-strategy",
+        "expected": "Tailwind CSS + Lucide 图标 + 自定义 design tokens，无生成图片依赖",
+        "evidenceTarget": "all-pages#implementation"
+      }
+    ],
+    "brandPrefix": "finsage",
+    "expectedDispatches": [
+      {
+        "nodeId": "page-index",
+        "pageId": "page-index",
+        "targetPageId": "page-index",
+        "htmlSrc": "pages/index.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/index.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "main-agent-trace-20260823",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-08-23T08:09:57.485Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-research-running",
+        "pageId": "page-research-running",
+        "targetPageId": "page-research-running",
+        "htmlSrc": "pages/research-running.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/research-running.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "main-agent-trace-20260823",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-08-23T08:09:57.573Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-research-result",
+        "pageId": "page-research-result",
+        "targetPageId": "page-research-result",
+        "htmlSrc": "pages/research-result.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/research-result.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "main-agent-trace-20260823",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-08-23T08:09:57.653Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-companies",
+        "pageId": "page-companies",
+        "targetPageId": "page-companies",
+        "htmlSrc": "pages/companies.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/companies.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "main-agent-trace-20260823",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-08-23T08:09:57.733Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-company-detail",
+        "pageId": "page-company-detail",
+        "targetPageId": "page-company-detail",
+        "htmlSrc": "pages/company-detail.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/company-detail.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "main-agent-trace-20260823",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-08-23T08:09:57.820Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-documents",
+        "pageId": "page-documents",
+        "targetPageId": "page-documents",
+        "htmlSrc": "pages/documents.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/documents.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "main-agent-trace-20260823",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-08-23T08:09:57.905Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-document-detail",
+        "pageId": "page-document-detail",
+        "targetPageId": "page-document-detail",
+        "htmlSrc": "pages/document-detail.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/document-detail.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "main-agent-trace-20260823",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-08-23T08:09:57.984Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-history",
+        "pageId": "page-history",
+        "targetPageId": "page-history",
+        "htmlSrc": "pages/history.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/history.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "main-agent-trace-20260823",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-08-23T08:09:58.062Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "nodeId": "page-settings",
+        "pageId": "page-settings",
+        "targetPageId": "page-settings",
+        "htmlSrc": "pages/settings.html",
+        "packetType": "ComplexPagePacket",
+        "status": "completed",
+        "changedFiles": [
+          "pages/settings.html"
+        ],
+        "toolCallLedger": {
+          "source": "main-agent-runtime-trace",
+          "traceDigest": "main-agent-trace-20260823",
+          "todoWriteCalls": 0,
+          "previewCalls": 0,
+          "validationScriptCalls": 0,
+          "helperScriptWrites": 0
+        },
+        "recordedAt": "2026-08-23T08:09:58.140Z",
+        "source": "record-dispatch-completion.mjs"
+      }
+    ],
+    "mainAgentPostDispatchMutations": [
+      {
+        "path": "finsage-ui.design",
+        "reason": "added missing page nodes for generated HTML files",
+        "owner": "main-agent",
+        "recordedAt": "2026-08-23T08:09:57.485Z",
+        "source": "record-dispatch-completion.mjs"
+      },
+      {
+        "path": "finsage-ui.design",
+        "reason": "added nav link IDs and registered global navigation interactions",
+        "recordedAt": "2026-08-23T07:50:00.000Z"
+      },
+      {
+        "path": "pages/index.html",
+        "reason": "added stable nav domIds for interaction wiring",
+        "recordedAt": "2026-08-23T07:50:00.000Z"
+      },
+      {
+        "path": "pages/research-running.html",
+        "reason": "added stable nav domIds for interaction wiring",
+        "recordedAt": "2026-08-23T07:50:00.000Z"
+      },
+      {
+        "path": "pages/research-result.html",
+        "reason": "added stable nav domIds for interaction wiring",
+        "recordedAt": "2026-08-23T07:50:00.000Z"
+      },
+      {
+        "path": "pages/companies.html",
+        "reason": "added stable nav domIds for interaction wiring",
+        "recordedAt": "2026-08-23T07:50:00.000Z"
+      },
+      {
+        "path": "pages/company-detail.html",
+        "reason": "added stable nav domIds for interaction wiring",
+        "recordedAt": "2026-08-23T07:50:00.000Z"
+      },
+      {
+        "path": "pages/documents.html",
+        "reason": "added stable nav domIds for interaction wiring",
+        "recordedAt": "2026-08-23T07:50:00.000Z"
+      },
+      {
+        "path": "pages/document-detail.html",
+        "reason": "added stable nav domIds for interaction wiring",
+        "recordedAt": "2026-08-23T07:50:00.000Z"
+      },
+      {
+        "path": "pages/history.html",
+        "reason": "added stable nav domIds for interaction wiring",
+        "recordedAt": "2026-08-23T07:50:00.000Z"
+      },
+      {
+        "path": "pages/settings.html",
+        "reason": "added stable nav domIds for interaction wiring",
+        "recordedAt": "2026-08-23T07:50:00.000Z"
+      },
+      {
+        "path": "pages/index.html",
+        "reason": "added data-dom-id attributes to nav links for .design interaction validation",
+        "recordedAt": "2026-08-23T07:51:00.000Z"
+      },
+      {
+        "path": "pages/research-running.html",
+        "reason": "added data-dom-id attributes to nav links for .design interaction validation",
+        "recordedAt": "2026-08-23T07:51:00.000Z"
+      },
+      {
+        "path": "pages/research-result.html",
+        "reason": "added data-dom-id attributes to nav links for .design interaction validation",
+        "recordedAt": "2026-08-23T07:51:00.000Z"
+      },
+      {
+        "path": "pages/companies.html",
+        "reason": "added data-dom-id attributes to nav links for .design interaction validation",
+        "recordedAt": "2026-08-23T07:51:00.000Z"
+      },
+      {
+        "path": "pages/company-detail.html",
+        "reason": "added data-dom-id attributes to nav links for .design interaction validation",
+        "recordedAt": "2026-08-23T07:51:00.000Z"
+      },
+      {
+        "path": "pages/documents.html",
+        "reason": "added data-dom-id attributes to nav links for .design interaction validation",
+        "recordedAt": "2026-08-23T07:51:00.000Z"
+      },
+      {
+        "path": "pages/document-detail.html",
+        "reason": "added data-dom-id attributes to nav links for .design interaction validation",
+        "recordedAt": "2026-08-23T07:51:00.000Z"
+      },
+      {
+        "path": "pages/history.html",
+        "reason": "added data-dom-id attributes to nav links for .design interaction validation",
+        "recordedAt": "2026-08-23T07:51:00.000Z"
+      },
+      {
+        "path": "pages/settings.html",
+        "reason": "added data-dom-id attributes to nav links for .design interaction validation",
+        "recordedAt": "2026-08-23T07:51:00.000Z"
+      },
+      {
+        "path": "pages/index.html",
+        "reason": "updated to align with FinSage V3.4 Frontend Engineering Contract (page contracts, domain models, state machine, component contracts)",
+        "recordedAt": "2026-08-23T08:00:00.000Z"
+      },
+      {
+        "path": "pages/research-running.html",
+        "reason": "updated to align with FinSage V3.4 Frontend Engineering Contract (page contracts, domain models, state machine, component contracts)",
+        "recordedAt": "2026-08-23T08:00:00.000Z"
+      },
+      {
+        "path": "pages/research-result.html",
+        "reason": "updated to align with FinSage V3.4 Frontend Engineering Contract (page contracts, domain models, state machine, component contracts)",
+        "recordedAt": "2026-08-23T08:00:00.000Z"
+      },
+      {
+        "path": "pages/companies.html",
+        "reason": "updated to align with FinSage V3.4 Frontend Engineering Contract (page contracts, domain models, state machine, component contracts)",
+        "recordedAt": "2026-08-23T08:00:00.000Z"
+      },
+      {
+        "path": "pages/company-detail.html",
+        "reason": "updated to align with FinSage V3.4 Frontend Engineering Contract (page contracts, domain models, state machine, component contracts)",
+        "recordedAt": "2026-08-23T08:00:00.000Z"
+      },
+      {
+        "path": "pages/documents.html",
+        "reason": "updated to align with FinSage V3.4 Frontend Engineering Contract (page contracts, domain models, state machine, component contracts)",
+        "recordedAt": "2026-08-23T08:00:00.000Z"
+      },
+      {
+        "path": "pages/document-detail.html",
+        "reason": "updated to align with FinSage V3.4 Frontend Engineering Contract (page contracts, domain models, state machine, component contracts)",
+        "recordedAt": "2026-08-23T08:00:00.000Z"
+      },
+      {
+        "path": "pages/history.html",
+        "reason": "updated to align with FinSage V3.4 Frontend Engineering Contract (page contracts, domain models, state machine, component contracts)",
+        "recordedAt": "2026-08-23T08:00:00.000Z"
+      },
+      {
+        "path": "pages/settings.html",
+        "reason": "updated to align with FinSage V3.4 Frontend Engineering Contract (page contracts, domain models, state machine, component contracts)",
+        "recordedAt": "2026-08-23T08:00:00.000Z"
+      },
+      {
+        "path": "colors_and_type.css",
+        "reason": "added state-queued/streaming/verifying/aborted tokens for Research UI state machine",
+        "recordedAt": "2026-08-23T08:00:00.000Z"
+      },
+      {
+        "path": "pages/company-detail-new.html, pages/research-result-new.html, pages/test-write.html",
+        "reason": "removed temporary/stray HTML files created during page updates",
+        "recordedAt": "2026-08-23T08:01:00.000Z"
+      }
+    ]
+  },
+  "designSource": {
+    "operatingMode": "free-explore",
+    "cssFilePath": "colors_and_type.css",
+    "styleConstraints": {
+      "primaryHue": "indigo",
+      "radiusMax": 16,
+      "staticShadowAlphaMax": 0.05,
+      "noSecondaryAccent": true,
+      "stateColorsOnly": true
+    },
+    "brandPrefix": "finsage"
+  },
+  "pages": [
+    {
+      "nodeId": "page-index",
+      "title": "研究工作台",
+      "htmlSrc": "pages/index.html",
+      "pageIndex": 1,
+      "deviceType": "desktop",
+      "viewportMode": "document-scroll",
+      "pageType": "task-driven",
+      "visualNorthStar": "研究工作台：左侧边栏导航 + 顶部搜索，中央大输入框与快捷问题，下方最近任务列表，专业金融 SaaS 密度。",
+      "compositionPattern": "sticky-left-sidebar-flowing-right",
+      "continuityAnchors": [
+        "统一左侧边栏导航（研究工作台、公司库、文档库、历史、设置）与顶部 FinSage Logo",
+        "统一卡片风格：白色表面、1px 浅灰边框、8px 圆角、极淡阴影",
+        "统一主色深靛蓝 #1d4ed8，状态色仅用于语义标签",
+        "统一 Inter + Noto Sans SC 字体体系，财务数据使用等宽字 Tabular Nums",
+        "统一 1440px 容器、24px 栅格间距、左侧边栏 240px 固定宽度"
+      ],
+      "componentPlan": [
+        {
+          "name": "Sidebar",
+          "source": "inline-html"
+        },
+        {
+          "name": "TopHeader",
+          "source": "inline-html"
+        },
+        {
+          "name": "Card",
+          "source": "tailwind"
+        },
+        {
+          "name": "Button",
+          "source": "tailwind"
+        },
+        {
+          "name": "Input",
+          "source": "tailwind"
+        },
+        {
+          "name": "Badge/Tag",
+          "source": "tailwind"
+        },
+        {
+          "name": "DataTable",
+          "source": "tailwind"
+        }
+      ],
+      "imagePlan": [],
+      "chartsRequired": false,
+      "miniProgramStyle": false
+    },
+    {
+      "nodeId": "page-research-running",
+      "title": "研究执行中",
+      "htmlSrc": "pages/research-running.html",
+      "pageIndex": 2,
+      "deviceType": "desktop",
+      "viewportMode": "document-scroll",
+      "pageType": "task-driven",
+      "visualNorthStar": "研究执行中：左侧固定边栏，主区域显示 Trace 时间线、当前阶段、进度条与流式答案预览，突出过程可观测性。",
+      "compositionPattern": "sticky-left-sidebar-flowing-right",
+      "continuityAnchors": [
+        "统一左侧边栏导航（研究工作台、公司库、文档库、历史、设置）与顶部 FinSage Logo",
+        "统一卡片风格：白色表面、1px 浅灰边框、8px 圆角、极淡阴影",
+        "统一主色深靛蓝 #1d4ed8，状态色仅用于语义标签",
+        "统一 Inter + Noto Sans SC 字体体系，财务数据使用等宽字 Tabular Nums",
+        "统一 1440px 容器、24px 栅格间距、左侧边栏 240px 固定宽度"
+      ],
+      "componentPlan": [
+        {
+          "name": "Sidebar",
+          "source": "inline-html"
+        },
+        {
+          "name": "TopHeader",
+          "source": "inline-html"
+        },
+        {
+          "name": "Card",
+          "source": "tailwind"
+        },
+        {
+          "name": "Button",
+          "source": "tailwind"
+        },
+        {
+          "name": "Input",
+          "source": "tailwind"
+        },
+        {
+          "name": "Badge/Tag",
+          "source": "tailwind"
+        },
+        {
+          "name": "DataTable",
+          "source": "tailwind"
+        }
+      ],
+      "imagePlan": [],
+      "chartsRequired": false,
+      "miniProgramStyle": false
+    },
+    {
+      "nodeId": "page-research-result",
+      "title": "研究结果",
+      "htmlSrc": "pages/research-result.html",
+      "pageIndex": 3,
+      "deviceType": "desktop",
+      "viewportMode": "document-scroll",
+      "pageType": "information-dense",
+      "visualNorthStar": "研究结果：三栏布局，左侧答案/Claims，中间 Evidence/Calculation 卡片，右侧 Trace/Metadata，引用标记可定位证据。",
+      "compositionPattern": "asymmetric-three-column",
+      "continuityAnchors": [
+        "统一左侧边栏导航（研究工作台、公司库、文档库、历史、设置）与顶部 FinSage Logo",
+        "统一卡片风格：白色表面、1px 浅灰边框、8px 圆角、极淡阴影",
+        "统一主色深靛蓝 #1d4ed8，状态色仅用于语义标签",
+        "统一 Inter + Noto Sans SC 字体体系，财务数据使用等宽字 Tabular Nums",
+        "统一 1440px 容器、24px 栅格间距、左侧边栏 240px 固定宽度"
+      ],
+      "componentPlan": [
+        {
+          "name": "Sidebar",
+          "source": "inline-html"
+        },
+        {
+          "name": "TopHeader",
+          "source": "inline-html"
+        },
+        {
+          "name": "Card",
+          "source": "tailwind"
+        },
+        {
+          "name": "Button",
+          "source": "tailwind"
+        },
+        {
+          "name": "Input",
+          "source": "tailwind"
+        },
+        {
+          "name": "Badge/Tag",
+          "source": "tailwind"
+        },
+        {
+          "name": "DataTable",
+          "source": "tailwind"
+        }
+      ],
+      "imagePlan": [],
+      "chartsRequired": false,
+      "miniProgramStyle": false
+    },
+    {
+      "nodeId": "page-companies",
+      "title": "公司库",
+      "htmlSrc": "pages/companies.html",
+      "pageIndex": 4,
+      "deviceType": "desktop",
+      "viewportMode": "document-scroll",
+      "pageType": "information-dense",
+      "visualNorthStar": "公司库：搜索过滤栏 + 数据表格，展示公司名称、代码、市场、最新财务摘要，高信息密度。",
+      "compositionPattern": "sticky-left-sidebar-flowing-right",
+      "continuityAnchors": [
+        "统一左侧边栏导航（研究工作台、公司库、文档库、历史、设置）与顶部 FinSage Logo",
+        "统一卡片风格：白色表面、1px 浅灰边框、8px 圆角、极淡阴影",
+        "统一主色深靛蓝 #1d4ed8，状态色仅用于语义标签",
+        "统一 Inter + Noto Sans SC 字体体系，财务数据使用等宽字 Tabular Nums",
+        "统一 1440px 容器、24px 栅格间距、左侧边栏 240px 固定宽度"
+      ],
+      "componentPlan": [
+        {
+          "name": "Sidebar",
+          "source": "inline-html"
+        },
+        {
+          "name": "TopHeader",
+          "source": "inline-html"
+        },
+        {
+          "name": "Card",
+          "source": "tailwind"
+        },
+        {
+          "name": "Button",
+          "source": "tailwind"
+        },
+        {
+          "name": "Input",
+          "source": "tailwind"
+        },
+        {
+          "name": "Badge/Tag",
+          "source": "tailwind"
+        },
+        {
+          "name": "DataTable",
+          "source": "tailwind"
+        }
+      ],
+      "imagePlan": [],
+      "chartsRequired": false,
+      "miniProgramStyle": false
+    },
+    {
+      "nodeId": "page-company-detail",
+      "title": "公司详情",
+      "htmlSrc": "pages/company-detail.html",
+      "pageIndex": 5,
+      "deviceType": "desktop",
+      "viewportMode": "document-scroll",
+      "pageType": "information-dense",
+      "visualNorthStar": "公司详情：顶部公司概况与 KPI，下方财务摘要、研究操作与最近任务，卡片分区清晰。",
+      "compositionPattern": "large-medium-stacked",
+      "continuityAnchors": [
+        "统一左侧边栏导航（研究工作台、公司库、文档库、历史、设置）与顶部 FinSage Logo",
+        "统一卡片风格：白色表面、1px 浅灰边框、8px 圆角、极淡阴影",
+        "统一主色深靛蓝 #1d4ed8，状态色仅用于语义标签",
+        "统一 Inter + Noto Sans SC 字体体系，财务数据使用等宽字 Tabular Nums",
+        "统一 1440px 容器、24px 栅格间距、左侧边栏 240px 固定宽度"
+      ],
+      "componentPlan": [
+        {
+          "name": "Sidebar",
+          "source": "inline-html"
+        },
+        {
+          "name": "TopHeader",
+          "source": "inline-html"
+        },
+        {
+          "name": "Card",
+          "source": "tailwind"
+        },
+        {
+          "name": "Button",
+          "source": "tailwind"
+        },
+        {
+          "name": "Input",
+          "source": "tailwind"
+        },
+        {
+          "name": "Badge/Tag",
+          "source": "tailwind"
+        },
+        {
+          "name": "DataTable",
+          "source": "tailwind"
+        }
+      ],
+      "imagePlan": [],
+      "chartsRequired": false,
+      "miniProgramStyle": false
+    },
+    {
+      "nodeId": "page-documents",
+      "title": "文档库",
+      "htmlSrc": "pages/documents.html",
+      "pageIndex": 6,
+      "deviceType": "desktop",
+      "viewportMode": "document-scroll",
+      "pageType": "information-dense",
+      "visualNorthStar": "文档库：上传区 + 文档列表，展示来源、期间、公司、处理状态，支持元数据扫描。",
+      "compositionPattern": "sticky-left-sidebar-flowing-right",
+      "continuityAnchors": [
+        "统一左侧边栏导航（研究工作台、公司库、文档库、历史、设置）与顶部 FinSage Logo",
+        "统一卡片风格：白色表面、1px 浅灰边框、8px 圆角、极淡阴影",
+        "统一主色深靛蓝 #1d4ed8，状态色仅用于语义标签",
+        "统一 Inter + Noto Sans SC 字体体系，财务数据使用等宽字 Tabular Nums",
+        "统一 1440px 容器、24px 栅格间距、左侧边栏 240px 固定宽度"
+      ],
+      "componentPlan": [
+        {
+          "name": "Sidebar",
+          "source": "inline-html"
+        },
+        {
+          "name": "TopHeader",
+          "source": "inline-html"
+        },
+        {
+          "name": "Card",
+          "source": "tailwind"
+        },
+        {
+          "name": "Button",
+          "source": "tailwind"
+        },
+        {
+          "name": "Input",
+          "source": "tailwind"
+        },
+        {
+          "name": "Badge/Tag",
+          "source": "tailwind"
+        },
+        {
+          "name": "DataTable",
+          "source": "tailwind"
+        }
+      ],
+      "imagePlan": [],
+      "chartsRequired": false,
+      "miniProgramStyle": false
+    },
+    {
+      "nodeId": "page-document-detail",
+      "title": "文档详情",
+      "htmlSrc": "pages/document-detail.html",
+      "pageIndex": 7,
+      "deviceType": "desktop",
+      "viewportMode": "document-scroll",
+      "pageType": "information-dense",
+      "visualNorthStar": "文档详情：左侧文档元数据，右侧内容预览与 Chunk/证据列表，引用可展开。",
+      "compositionPattern": "asymmetric-two-column",
+      "continuityAnchors": [
+        "统一左侧边栏导航（研究工作台、公司库、文档库、历史、设置）与顶部 FinSage Logo",
+        "统一卡片风格：白色表面、1px 浅灰边框、8px 圆角、极淡阴影",
+        "统一主色深靛蓝 #1d4ed8，状态色仅用于语义标签",
+        "统一 Inter + Noto Sans SC 字体体系，财务数据使用等宽字 Tabular Nums",
+        "统一 1440px 容器、24px 栅格间距、左侧边栏 240px 固定宽度"
+      ],
+      "componentPlan": [
+        {
+          "name": "Sidebar",
+          "source": "inline-html"
+        },
+        {
+          "name": "TopHeader",
+          "source": "inline-html"
+        },
+        {
+          "name": "Card",
+          "source": "tailwind"
+        },
+        {
+          "name": "Button",
+          "source": "tailwind"
+        },
+        {
+          "name": "Input",
+          "source": "tailwind"
+        },
+        {
+          "name": "Badge/Tag",
+          "source": "tailwind"
+        },
+        {
+          "name": "DataTable",
+          "source": "tailwind"
+        }
+      ],
+      "imagePlan": [],
+      "chartsRequired": false,
+      "miniProgramStyle": false
+    },
+    {
+      "nodeId": "page-history",
+      "title": "研究历史",
+      "htmlSrc": "pages/history.html",
+      "pageIndex": 8,
+      "deviceType": "desktop",
+      "viewportMode": "document-scroll",
+      "pageType": "information-dense",
+      "visualNorthStar": "研究历史：过滤栏 + 任务列表，状态标签、公司、时间、操作，支持筛选与打开结果。",
+      "compositionPattern": "sticky-left-sidebar-flowing-right",
+      "continuityAnchors": [
+        "统一左侧边栏导航（研究工作台、公司库、文档库、历史、设置）与顶部 FinSage Logo",
+        "统一卡片风格：白色表面、1px 浅灰边框、8px 圆角、极淡阴影",
+        "统一主色深靛蓝 #1d4ed8，状态色仅用于语义标签",
+        "统一 Inter + Noto Sans SC 字体体系，财务数据使用等宽字 Tabular Nums",
+        "统一 1440px 容器、24px 栅格间距、左侧边栏 240px 固定宽度"
+      ],
+      "componentPlan": [
+        {
+          "name": "Sidebar",
+          "source": "inline-html"
+        },
+        {
+          "name": "TopHeader",
+          "source": "inline-html"
+        },
+        {
+          "name": "Card",
+          "source": "tailwind"
+        },
+        {
+          "name": "Button",
+          "source": "tailwind"
+        },
+        {
+          "name": "Input",
+          "source": "tailwind"
+        },
+        {
+          "name": "Badge/Tag",
+          "source": "tailwind"
+        },
+        {
+          "name": "DataTable",
+          "source": "tailwind"
+        }
+      ],
+      "imagePlan": [],
+      "chartsRequired": false,
+      "miniProgramStyle": false
+    },
+    {
+      "nodeId": "page-settings",
+      "title": "设置",
+      "htmlSrc": "pages/settings.html",
+      "pageIndex": 9,
+      "deviceType": "desktop",
+      "viewportMode": "document-scroll",
+      "pageType": "task-driven",
+      "visualNorthStar": "设置：简洁表单页面，分组卡片，会话、Provider、账户设置，低密度专业感。",
+      "compositionPattern": "sticky-left-sidebar-flowing-right",
+      "continuityAnchors": [
+        "统一左侧边栏导航（研究工作台、公司库、文档库、历史、设置）与顶部 FinSage Logo",
+        "统一卡片风格：白色表面、1px 浅灰边框、8px 圆角、极淡阴影",
+        "统一主色深靛蓝 #1d4ed8，状态色仅用于语义标签",
+        "统一 Inter + Noto Sans SC 字体体系，财务数据使用等宽字 Tabular Nums",
+        "统一 1440px 容器、24px 栅格间距、左侧边栏 240px 固定宽度"
+      ],
+      "componentPlan": [
+        {
+          "name": "Sidebar",
+          "source": "inline-html"
+        },
+        {
+          "name": "TopHeader",
+          "source": "inline-html"
+        },
+        {
+          "name": "Card",
+          "source": "tailwind"
+        },
+        {
+          "name": "Button",
+          "source": "tailwind"
+        },
+        {
+          "name": "Input",
+          "source": "tailwind"
+        },
+        {
+          "name": "Badge/Tag",
+          "source": "tailwind"
+        },
+        {
+          "name": "DataTable",
+          "source": "tailwind"
+        }
+      ],
+      "imagePlan": [],
+      "chartsRequired": false,
+      "miniProgramStyle": false
+    }
+  ],
+  "assets": [],
+  "wiringPlan": [
+    {
+      "from": "page-index",
+      "to": "page-research-running",
+      "domId": "btn-start-research",
+      "label": "开始研究"
+    },
+    {
+      "from": "page-research-running",
+      "to": "page-research-result",
+      "domId": "link-view-result",
+      "label": "查看结果"
+    },
+    {
+      "from": "page-index",
+      "to": "page-companies",
+      "domId": "nav-companies",
+      "label": "公司库",
+      "hideEdge": true
+    },
+    {
+      "from": "page-index",
+      "to": "page-documents",
+      "domId": "nav-documents",
+      "label": "文档库",
+      "hideEdge": true
+    },
+    {
+      "from": "page-index",
+      "to": "page-history",
+      "domId": "nav-history",
+      "label": "研究历史",
+      "hideEdge": true
+    },
+    {
+      "from": "page-index",
+      "to": "page-settings",
+      "domId": "nav-settings",
+      "label": "设置",
+      "hideEdge": true
+    },
+    {
+      "from": "page-companies",
+      "to": "page-company-detail",
+      "domId": "row-company-1",
+      "label": "打开公司"
+    },
+    {
+      "from": "page-documents",
+      "to": "page-document-detail",
+      "domId": "row-document-1",
+      "label": "打开文档"
+    },
+    {
+      "from": "page-history",
+      "to": "page-research-result",
+      "domId": "row-task-1",
+      "label": "打开历史结果"
+    },
+    {
+      "from": "page-research-result",
+      "to": "page-document-detail",
+      "domId": "evidence-doc-1",
+      "label": "查看证据来源"
+    }
+  ],
+  "hiddenInteractionPlan": [
+    {
+      "from": "page-companies",
+      "to": "page-index",
+      "domId": "nav-workspace",
+      "hideEdge": true
+    },
+    {
+      "from": "page-documents",
+      "to": "page-index",
+      "domId": "nav-workspace",
+      "hideEdge": true
+    },
+    {
+      "from": "page-history",
+      "to": "page-index",
+      "domId": "nav-workspace",
+      "hideEdge": true
+    },
+    {
+      "from": "page-settings",
+      "to": "page-index",
+      "domId": "nav-workspace",
+      "hideEdge": true
+    },
+    {
+      "from": "page-company-detail",
+      "to": "page-companies",
+      "domId": "nav-companies",
+      "hideEdge": true
+    },
+    {
+      "from": "page-document-detail",
+      "to": "page-documents",
+      "domId": "nav-documents",
+      "hideEdge": true
+    }
+  ]
+}

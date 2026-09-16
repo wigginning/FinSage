@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinSage — 研究工作台</title>
+    <style id="theme-vars">
+/* FinSage UI — Professional Institutional Finance Design Tokens */
+/* Light mode default; dark mode toggled via <html class="dark"> */
+
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+}
+
+:root {
+  /* Brand primary: deep indigo */
+  --brand-50: #eef4ff;
+  --brand-100: #dbeafe;
+  --brand-200: #bfdbfe;
+  --brand-300: #93c5fd;
+  --brand-400: #60a5fa;
+  --brand-500: #3b82f6;
+  --brand-600: #2563eb;
+  --brand-700: #1d4ed8;
+  --brand-800: #1e40af;
+  --brand-900: #1e3a8a;
+
+  /* Neutral: cool slate */
+  --neutral-0: #ffffff;
+  --neutral-50: #f8fafc;
+  --neutral-100: #f1f5f9;
+  --neutral-200: #e2e8f0;
+  --neutral-300: #cbd5e1;
+  --neutral-400: #94a3b8;
+  --neutral-500: #64748b;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1e293b;
+  --neutral-900: #0f172a;
+
+  /* State semantic */
+  --state-success: #059669;
+  --state-success-bg: #ecfdf5;
+  --state-warning: #d97706;
+  --state-warning-bg: #fffbeb;
+  --state-error: #dc2626;
+  --state-error-bg: #fef2f2;
+  --state-info: #2563eb;
+  --state-info-bg: #eff6ff;
+  --state-queued: #64748b;
+  --state-queued-bg: #f1f5f9;
+  --state-streaming: #7c3aed;
+  --state-streaming-bg: #f3e8ff;
+  --state-verifying: #f59e0b;
+  --state-verifying-bg: #fffbeb;
+  --state-aborted: #475569;
+  --state-aborted-bg: #e2e8f0;
+
+  /* Spacing scale (8pt grid) */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 80px;
+
+  /* Radius */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Shadow */
+  --shadow-1: 0 1px 2px rgba(15, 23, 42, 0.05), 0 1px 1px rgba(15, 23, 42, 0.03);
+  --shadow-2: 0 8px 24px -8px rgba(15, 23, 42, 0.12);
+  --shadow-3: 0 24px 60px -20px rgba(15, 23, 42, 0.22);
+
+  /* Typography */
+  --font-sans: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", "Fira Code", "Noto Sans Mono", monospace;
+
+  /* Semantic tokens — light */
+  --background: var(--neutral-50);
+  --foreground: var(--neutral-900);
+  --card: var(--neutral-0);
+  --card-foreground: var(--neutral-900);
+  --popover: var(--neutral-0);
+  --popover-foreground: var(--neutral-900);
+  --primary: var(--brand-700);
+  --primary-foreground: var(--neutral-0);
+  --muted: var(--neutral-100);
+  --muted-foreground: var(--neutral-500);
+  --border: var(--neutral-200);
+  --input: var(--neutral-200);
+  --ring: var(--brand-500);
+}
+
+html.dark {
+  /* Semantic tokens — dark */
+  --background: #0b0c10;
+  --foreground: var(--neutral-100);
+  --card: #12131a;
+  --card-foreground: var(--neutral-100);
+  --popover: #12131a;
+  --popover-foreground: var(--neutral-100);
+  --primary: var(--brand-500);
+  --primary-foreground: var(--neutral-0);
+  --muted: #1a1c25;
+  --muted-foreground: var(--neutral-400);
+  --border: #272a36;
+  --input: #272a36;
+  --ring: var(--brand-400);
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(0, 0, 0, 0.15);
+  --shadow-2: 0 8px 24px -8px rgba(0, 0, 0, 0.45);
+  --shadow-3: 0 24px 60px -20px rgba(0, 0, 0, 0.65);
+}
+
+/* Base typography */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--background);
+  color: var(--foreground);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Type scale utilities */
+.text-display {
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.08;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.text-h1 {
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.text-h2 {
+  font-size: clamp(22px, 2.2vw, 28px);
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.text-h3 {
+  font-size: 18px;
+  line-height: 1.35;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.text-body-lg {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.text-body {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.text-caption {
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: 0.005em;
+}
+
+.text-mono {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tabular numbers for financial data */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --radius-sm: var(--radius-sm);
+    --radius-md: var(--radius-md);
+    --radius-lg: var(--radius-lg);
+    --radius-xl: var(--radius-xl);
+  }
+  @layer base {
+    body { background: var(--background); color: var(--foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--background); }
+      .text-background { color: var(--background); }
+      .border-background { border-color: var(--background); }
+      .ring-background { --tw-ring-color: var(--background); }
+      .bg-foreground { background-color: var(--foreground); }
+      .text-foreground { color: var(--foreground); }
+      .border-foreground { border-color: var(--foreground); }
+      .ring-foreground { --tw-ring-color: var(--foreground); }
+      .bg-card { background-color: var(--card); }
+      .text-card { color: var(--card); }
+      .border-card { border-color: var(--card); }
+      .ring-card { --tw-ring-color: var(--card); }
+      .bg-card-foreground { background-color: var(--card-foreground); }
+      .text-card-foreground { color: var(--card-foreground); }
+      .border-card-foreground { border-color: var(--card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--card-foreground); }
+      .bg-popover { background-color: var(--popover); }
+      .text-popover { color: var(--popover); }
+      .border-popover { border-color: var(--popover); }
+      .ring-popover { --tw-ring-color: var(--popover); }
+      .bg-popover-foreground { background-color: var(--popover-foreground); }
+      .text-popover-foreground { color: var(--popover-foreground); }
+      .border-popover-foreground { border-color: var(--popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--popover-foreground); }
+      .bg-primary { background-color: var(--primary); }
+      .text-primary { color: var(--primary); }
+      .border-primary { border-color: var(--primary); }
+      .ring-primary { --tw-ring-color: var(--primary); }
+      .bg-primary-foreground { background-color: var(--primary-foreground); }
+      .text-primary-foreground { color: var(--primary-foreground); }
+      .border-primary-foreground { border-color: var(--primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--primary-foreground); }
+      .bg-muted { background-color: var(--muted); }
+      .text-muted { color: var(--muted); }
+      .border-muted { border-color: var(--muted); }
+      .ring-muted { --tw-ring-color: var(--muted); }
+      .bg-muted-foreground { background-color: var(--muted-foreground); }
+      .text-muted-foreground { color: var(--muted-foreground); }
+      .border-muted-foreground { border-color: var(--muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--muted-foreground); }
+      .bg-border { background-color: var(--border); }
+      .text-border { color: var(--border); }
+      .border-border { border-color: var(--border); }
+      .ring-border { --tw-ring-color: var(--border); }
+      .bg-input { background-color: var(--input); }
+      .text-input { color: var(--input); }
+      .border-input { border-color: var(--input); }
+      .ring-input { --tw-ring-color: var(--input); }
+      .bg-ring { background-color: var(--ring); }
+      .text-ring { color: var(--ring); }
+      .border-ring { border-color: var(--ring); }
+      .ring-ring { --tw-ring-color: var(--ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="min-h-screen bg-[var(--background)] text-[var(--foreground)] antialiased">
+  <header class="fixed top-0 left-0 right-0 h-14 bg-[var(--card)] border-b border-[var(--border)] z-50 flex items-center justify-between px-4">
+    <div class="flex items-center gap-3">
+      <a href="index.html" id="nav-logo" data-dom-id="nav-logo" class="flex items-center gap-2 text-[var(--primary)] hover:opacity-90 transition-opacity">
+        <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+        <span class="text-lg font-semibold tracking-tight">FinSage</span>
+      </a>
+      <span class="text-[var(--muted-foreground)] text-xs px-2 py-0.5 bg-[var(--muted)] rounded">v3.4</span>
+    </div>
+    <div class="flex-1 max-w-xl mx-6">
+      <div class="relative">
+        <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted-foreground)]"></i>
+        <input type="text" placeholder="搜索公司、文档、研究任务…" class="w-full h-9 pl-9 pr-4 text-sm bg-[var(--muted)] border border-[var(--border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ring)] focus:border-transparent placeholder:text-[var(--muted-foreground)]">
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <button class="p-2 text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] rounded-md transition-colors" aria-label="通知"><i data-lucide="bell" class="w-5 h-5"></i></button>
+      <button class="p-2 text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] rounded-md transition-colors" aria-label="主题"><i data-lucide="moon" class="w-5 h-5"></i></button>
+      <div class="flex items-center gap-2 pl-3 border-l border-[var(--border)]">
+        <div class="w-8 h-8 rounded-full bg-[var(--primary)] text-white flex items-center justify-center text-sm font-medium">A</div>
+        <span class="text-sm font-medium hidden lg:block">analyst@finsage.io</span>
+      </div>
+    </div>
+  </header>
+  <div class="flex pt-14 min-h-screen">
+    <aside class="fixed top-14 left-0 bottom-0 w-60 bg-[var(--card)] border-r border-[var(--border)] z-40 flex flex-col">
+      <nav class="flex-1 p-3 space-y-1" aria-label="主导航">
+        <a href="index.html" id="nav-index" data-dom-id="nav-index" class="nav-item flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md bg-[var(--muted)] text-[var(--primary)] hover:bg-[var(--muted)] transition-colors"><i data-lucide="layout-dashboard" class="w-4.5 h-4.5 text-[var(--primary)]"></i><span>研究工作台</span></a>
+        <a href="companies.html" id="nav-companies" data-dom-id="nav-companies" class="nav-item flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors"><i data-lucide="building-2" class="w-4.5 h-4.5 text-[var(--muted-foreground)]"></i><span>公司库</span></a>
+        <a href="documents.html" id="nav-documents" data-dom-id="nav-documents" class="nav-item flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors"><i data-lucide="file-text" class="w-4.5 h-4.5 text-[var(--muted-foreground)]"></i><span>文档库</span></a>
+        <a href="history.html" id="nav-history" data-dom-id="nav-history" class="nav-item flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors"><i data-lucide="history" class="w-4.5 h-4.5 text-[var(--muted-foreground)]"></i><span>研究历史</span></a>
+        <div class="pt-4 mt-4 border-t border-[var(--border)]">
+          <a href="settings.html" id="nav-settings" data-dom-id="nav-settings" class="nav-item flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors"><i data-lucide="settings" class="w-4.5 h-4.5 text-[var(--muted-foreground)]"></i><span>设置</span></a>
+        </div>
+      </nav>
+      <div class="p-3 border-t border-[var(--border)]">
+        <div class="px-3 py-2 rounded-md bg-[var(--muted)]">
+          <p class="text-xs text-[var(--muted-foreground)] mb-1">系统状态</p>
+          <div class="flex items-center gap-2 text-xs text-[var(--state-success)]"><span class="w-1.5 h-1.5 rounded-full bg-[var(--state-success)]"></span><span>所有服务正常</span></div>
+        </div>
+      </div>
+    </aside>
+    <main class="flex-1 ml-60 min-h-[calc(100vh-3.5rem)]" id="main-content">
+      <div class="max-w-[1440px] mx-auto p-6">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+          <div>
+            <h1 class="text-h2 text-[var(--foreground)]">研究工作台</h1>
+            <p class="text-sm text-[var(--muted-foreground)] mt-1">创建研究任务、配置上下文与选项，并跟踪进行中的分析。</p>
+          </div>
+        </div>
+        <section class="bg-[var(--card)] border border-[var(--border)] rounded-lg p-5 mb-6 shadow-sm" aria-labelledby="research-composer-heading">
+          <div class="flex items-center gap-2 mb-4">
+            <i data-lucide="sparkles" class="w-4 h-4 text-[var(--primary)]"></i>
+            <h2 id="research-composer-heading" class="text-h3 text-[var(--foreground)]">新建研究</h2>
+          </div>
+          <form id="research-form" class="space-y-4" onsubmit="event.preventDefault();">
+            <div>
+              <label for="research-query" class="block text-sm font-medium text-[var(--foreground)] mb-1.5">研究主题 / 问题</label>
+              <textarea id="research-query" rows="3" placeholder="输入研究主题或具体问题…" class="w-full p-3 text-sm bg-[var(--background)] border border-[var(--border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ring)] focus:border-transparent placeholder:text-[var(--muted-foreground)] resize-none" aria-required="true"></textarea>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div>
+                <label for="company-name" class="block text-sm font-medium text-[var(--foreground)] mb-1.5">公司 / 实体</label>
+                <div class="relative">
+                  <i data-lucide="building-2" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted-foreground)]"></i>
+                  <input id="company-name" type="text" placeholder="例如：Apple Inc." class="w-full h-10 pl-9 pr-3 text-sm bg-[var(--background)] border border-[var(--border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ring)] focus:border-transparent placeholder:text-[var(--muted-foreground)]">
+                </div>
+              </div>
+              <div>
+                <label for="ticker-symbol" class="block text-sm font-medium text-[var(--foreground)] mb-1.5">股票代码</label>
+                <div class="relative">
+                  <i data-lucide="hash" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted-foreground)]"></i>
+                  <input id="ticker-symbol" type="text" placeholder="例如：AAPL" class="w-full h-10 pl-9 pr-3 text-sm bg-[var(--background)] border border-[var(--border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ring)] focus:border-transparent placeholder:text-[var(--muted-foreground)]">
+                </div>
+              </div>
+              <div>
+                <label for="market-select" class="block text-sm font-medium text-[var(--foreground)] mb-1.5">市场</label>
+                <div class="relative">
+                  <select id="market-select" class="w-full h-10 pl-3 pr-9 text-sm bg-[var(--background)] border border-[var(--border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ring)] appearance-none cursor-pointer" aria-label="选择市场">
+                    <option value="">请选择市场</option>
+                    <option value="US">美股</option>
+                    <option value="CN">A股</option>
+                    <option value="HK">港股</option>
+                    <option value="JP">日股</option>
+                    <option value="EU">欧股</option>
+                  </select>
+                  <i data-lucide="chevron-down" class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted-foreground)] pointer-events-none"></i>
+                </div>
+              </div>
+            </div>
+            <div>
+              <span class="block text-sm font-medium text-[var(--foreground)] mb-2">研究选项</span>
+              <div class="flex flex-wrap gap-4">
+                <label class="inline-flex items-center gap-2 text-sm text-[var(--foreground)] cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 rounded border-[var(--border)] text-[var(--primary)] focus:ring-[var(--ring)] bg-[var(--background)]" checked>
+                  <span>启用 RAG</span>
+                </label>
+                <label class="inline-flex items-center gap-2 text-sm text-[var(--foreground)] cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 rounded border-[var(--border)] text-[var(--primary)] focus:ring-[var(--ring)] bg-[var(--background)]" checked>
+                  <span>启用财务计算</span>
+                </label>
+                <label class="inline-flex items-center gap-2 text-sm text-[var(--foreground)] cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 rounded border-[var(--border)] text-[var(--primary)] focus:ring-[var(--ring)] bg-[var(--background)]">
+                  <span>启用交叉验证</span>
+                </label>
+              </div>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:items-center gap-3 pt-1">
+              <button type="submit" class="inline-flex items-center justify-center gap-2 h-11 px-6 text-sm font-semibold rounded-md bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--brand-800)] transition-colors shadow-sm" aria-label="提交研究任务">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span>提交研究</span>
+              </button>
+              <p class="text-xs text-[var(--muted-foreground)] flex items-center gap-1.5">
+                <i data-lucide="info" class="w-3.5 h-3.5"></i>
+                <span>任务提交后将通过 SSE 流式返回研究进度与结论。</span>
+              </p>
+            </div>
+          </form>
+        </section>
+
+        <section class="bg-[var(--card)] border border-[var(--border)] rounded-lg shadow-sm mb-6" aria-labelledby="recent-heading">
+          <div class="px-5 py-4 border-b border-[var(--border)] flex items-center justify-between">
+            <h2 id="recent-heading" class="text-h3 text-[var(--foreground)]">最近任务</h2>
+            <a href="history.html" class="text-sm text-[var(--primary)] hover:underline">查看全部</a>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm text-left">
+              <thead class="bg-[var(--muted)] text-xs uppercase text-[var(--muted-foreground)]">
+                <tr>
+                  <th scope="col" class="px-5 py-3 font-medium">任务ID</th>
+                  <th scope="col" class="px-5 py-3 font-medium">查询主题</th>
+                  <th scope="col" class="px-5 py-3 font-medium">公司</th>
+                  <th scope="col" class="px-5 py-3 font-medium">状态</th>
+                  <th scope="col" class="px-5 py-3 font-medium">进度</th>
+                  <th scope="col" class="px-5 py-3 font-medium">创建时间</th>
+                  <th scope="col" class="px-5 py-3 font-medium">操作</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-[var(--border)]">
+                <tr class="hover:bg-[var(--neutral-50)] transition-colors" data-session-id="sess-20250823-001" data-trace-id="trace-20250823-001" data-updated-at="2025-08-23T10:42:00Z">
+                  <td class="px-5 py-3 font-mono text-xs text-[var(--muted-foreground)]">R-20250823-001</td>
+                  <td class="px-5 py-3 font-medium text-[var(--foreground)]">Q3 盈利预测与估值重估</td>
+                  <td class="px-5 py-3 text-[var(--foreground)]">Apple Inc.</td>
+                  <td class="px-5 py-3"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-medium bg-[var(--state-info-bg)] text-[var(--state-info)]"><span class="w-1.5 h-1.5 rounded-full bg-[var(--state-info)]"></span>running</span></td>
+                  <td class="px-5 py-3">
+                    <div class="flex items-center gap-2">
+                      <div class="w-20 h-1.5 bg-[var(--neutral-200)] rounded-full overflow-hidden">
+                        <div class="h-full bg-[var(--state-info)] rounded-full" style="width: 68%"></div>
+                      </div>
+                      <span class="text-xs text-[var(--muted-foreground)] tabular">68%</span>
+                    </div>
+                  </td>
+                  <td class="px-5 py-3 text-[var(--muted-foreground)] tabular">2025-08-23 10:42</td>
+                  <td class="px-5 py-3"><button class="text-[var(--primary)] hover:text-[var(--brand-800)] text-xs font-medium" aria-label="继续 R-20250823-001">继续</button></td>
+                </tr>
+                <tr class="hover:bg-[var(--neutral-50)] transition-colors" data-session-id="sess-20250822-089" data-trace-id="trace-20250822-089" data-updated-at="2025-08-22T16:15:00Z">
+                  <td class="px-5 py-3 font-mono text-xs text-[var(--muted-foreground)]">R-20250822-089</td>
+                  <td class="px-5 py-3 font-medium text-[var(--foreground)]">新能源汽车供应链风险分析</td>
+                  <td class="px-5 py-3 text-[var(--foreground)]">Tesla, Inc.</td>
+                  <td class="px-5 py-3"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-medium bg-[var(--neutral-100)] text-[var(--neutral-600)]"><span class="w-1.5 h-1.5 rounded-full bg-[var(--neutral-500)]"></span>queued</span></td>
+                  <td class="px-5 py-3">
+                    <div class="flex items-center gap-2">
+                      <div class="w-20 h-1.5 bg-[var(--neutral-200)] rounded-full overflow-hidden">
+                        <div class="h-full bg-[var(--neutral-400)] rounded-full" style="width: 0%"></div>
+                      </div>
+                      <span class="text-xs text-[var(--muted-foreground)] tabular">0%</span>
+                    </div>
+                  </td>
+                  <td class="px-5 py-3 text-[var(--muted-foreground)] tabular">2025-08-22 16:15</td>
+                  <td class="px-5 py-3"><button class="text-[var(--primary)] hover:text-[var(--brand-800)] text-xs font-medium" aria-label="查看 R-20250822-089">查看</button></td>
+                </tr>
+                <tr class="hover:bg-[var(--neutral-50)] transition-colors" data-session-id="sess-20250822-088" data-trace-id="trace-20250822-088" data-updated-at="2025-08-22T14:08:00Z">
+                  <td class="px-5 py-3 font-mono text-xs text-[var(--muted-foreground)]">R-20250822-088</td>
+                  <td class="px-5 py-3 font-medium text-[var(--foreground)]">利率上行对 REITs 影响</td>
+                  <td class="px-5 py-3 text-[var(--foreground)]">Prologis, Inc.</td>
+                  <td class="px-5 py-3"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-medium bg-[var(--state-success-bg)] text-[var(--state-success)]"><span class="w-1.5 h-1.5 rounded-full bg-[var(--state-success)]"></span>completed</span></td>
+                  <td class="px-5 py-3">
+                    <div class="flex items-center gap-2">
+                      <div class="w-20 h-1.5 bg-[var(--neutral-200)] rounded-full overflow-hidden">
+                        <div class="h-full bg-[var(--state-success)] rounded-full" style="width: 100%"></div>
+                      </div>
+                      <span class="text-xs text-[var(--muted-foreground)] tabular">100%</span>
+                    </div>
+                  </td>
+                  <td class="px-5 py-3 text-[var(--muted-foreground)] tabular">2025-08-22 14:08</td>
+                  <td class="px-5 py-3"><button class="text-[var(--primary)] hover:text-[var(--brand-800)] text-xs font-medium" aria-label="查看 R-20250822-088">查看</button></td>
+                </tr>
+                <tr class="hover:bg-[var(--neutral-50)] transition-colors" data-session-id="sess-20250821-076" data-trace-id="trace-20250821-076" data-updated-at="2025-08-21T11:30:00Z">
+                  <td class="px-5 py-3 font-mono text-xs text-[var(--muted-foreground)]">R-20250821-076</td>
+                  <td class="px-5 py-3 font-medium text-[var(--foreground)]">AI 基础设施资本开支追踪</td>
+                  <td class="px-5 py-3 text-[var(--foreground)]">NVIDIA Corp.</td>
+                  <td class="px-5 py-3"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-medium bg-[var(--state-error-bg)] text-[var(--state-error)]"><span class="w-1.5 h-1.5 rounded-full bg-[var(--state-error)]"></span>failed</span></td>
+                  <td class="px-5 py-3">
+                    <div class="flex items-center gap-2">
+                      <div class="w-20 h-1.5 bg-[var(--neutral-200)] rounded-full overflow-hidden">
+                        <div class="h-full bg-[var(--state-error)] rounded-full" style="width: 42%"></div>
+                      </div>
+                      <span class="text-xs text-[var(--muted-foreground)] tabular">42%</span>
+                    </div>
+                  </td>
+                  <td class="px-5 py-3 text-[var(--muted-foreground)] tabular">2025-08-21 11:30</td>
+                  <td class="px-5 py-3"><button class="text-[var(--primary)] hover:text-[var(--brand-800)] text-xs font-medium" aria-label="重试 R-20250821-076">重试</button></td>
+                </tr>
+                <tr class="hover:bg-[var(--neutral-50)] transition-colors" data-session-id="sess-20250821-075" data-trace-id="trace-20250821-075" data-updated-at="2025-08-21T09:20:00Z">
+                  <td class="px-5 py-3 font-mono text-xs text-[var(--muted-foreground)]">R-20250821-075</td>
+                  <td class="px-5 py-3 font-medium text-[var(--foreground)]">银行业净息差压力测试</td>
+                  <td class="px-5 py-3 text-[var(--foreground)]">JPMorgan Chase</td>
+                  <td class="px-5 py-3"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-medium bg-[var(--neutral-100)] text-[var(--neutral-500)]"><span class="w-1.5 h-1.5 rounded-full bg-[var(--neutral-400)]"></span>aborted</span></td>
+                  <td class="px-5 py-3">
+                    <div class="flex items-center gap-2">
+                      <div class="w-20 h-1.5 bg-[var(--neutral-200)] rounded-full overflow-hidden">
+                        <div class="h-full bg-[var(--neutral-400)] rounded-full" style="width: 25%"></div>
+                      </div>
+                      <span class="text-xs text-[var(--muted-foreground)] tabular">25%</span>
+                    </div>
+                  </td>
+                  <td class="px-5 py-3 text-[var(--muted-foreground)] tabular">2025-08-21 09:20</td>
+                  <td class="px-5 py-3"><button class="text-[var(--primary)] hover:text-[var(--brand-800)] text-xs font-medium" aria-label="查看 R-20250821-075">查看</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <footer class="border-t border-[var(--border)] pt-4">
+          <p class="text-xs text-[var(--muted-foreground)] flex items-center gap-1.5">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+            <span>所有结论均保留证据链，可追溯来源。</span>
+          </p>
+        </footer>
+      </div>
+    </main>
+  </div>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

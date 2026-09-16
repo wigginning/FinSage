@@ -1,0 +1,19 @@
+# 构建上下文为项目根；排除本地开发产物，避免体积膨胀与误打包密钥。
+# 模型资源不入镜像（运行时只读 + 在线兜底），故排除 resources/* 与模型缓存。
+resources/
+.venv
+**/*.pyc
+**/__pycache__
+.pytest_cache
+.ruff_cache
+**/node_modules
+**/.next
+**/dist
+**/build
+data/models-cache
+data/demo
+*.log
+.env
+.env.local
+*.pem
+!migrations/

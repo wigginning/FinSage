@@ -1,0 +1,99 @@
+{
+  "success": true,
+  "outcome": "passed",
+  "repairable": true,
+  "terminalViolations": [],
+  "terminalBlockingSummary": null,
+  "skillProvenance": {
+    "name": "solo-design",
+    "version": "2026.08.06.19.15.08",
+    "version_source": "skill-release-manifest.json",
+    "runtime_skill_dir": null,
+    "recorded_at": null,
+    "expected_version": "2026.08.06.19.15.08",
+    "status": "matched",
+    "read_status": "loaded"
+  },
+  "operatingMode": "free-explore",
+  "renderBlockingErrorCount": 0,
+  "softWarningCount": 0,
+  "renderBlockingErrors": [],
+  "errorSignatures": [],
+  "softWarnings": [],
+  "repairPlanHints": [],
+  "repairActionTable": [],
+  "errorCount": 0,
+  "warningCount": 0,
+  "errors": [],
+  "warnings": [],
+  "validationRunDisciplineStatus": {
+    "declared": true,
+    "restoreMode": false,
+    "maxFullValidationRuns": null,
+    "validationHistoryCount": 0,
+    "repairLedgerCount": 0,
+    "softWarningsTriggerRepair": null,
+    "terminalState": null,
+    "nextAction": null,
+    "violations": [],
+    "success": true
+  },
+  "terminalState": null,
+  "nextCheck": {
+    "type": "finish-readiness",
+    "command": "node \"c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\" --check=all",
+    "fullValidationAllowed": false,
+    "reason": "workspace validation passed; run complete finish readiness before final delivery"
+  },
+  "repairBatch": [],
+  "repairContextPacket": {
+    "schema_version": "1.0",
+    "purpose": "small-context repair packet; read this before full validation-report.json",
+    "success": true,
+    "terminalState": null,
+    "skillProvenance": {
+      "name": "solo-design",
+      "version": "2026.08.06.19.15.08",
+      "version_source": "skill-release-manifest.json",
+      "runtime_skill_dir": null,
+      "recorded_at": null,
+      "expected_version": "2026.08.06.19.15.08",
+      "status": "matched",
+      "read_status": "loaded"
+    },
+    "renderBlockingErrorCount": 0,
+    "softWarningCount": 0,
+    "renderBlockingErrors": [],
+    "repairActionTable": [],
+    "nextCheck": {
+      "type": "finish-readiness",
+      "command": "node \"c:\\Users\\TaoistMaster\\.trae-cn\\builtin\\design\\default\\skills\\solo-design\\shared-runtime\\deterministic-tooling\\validate-finish-readiness.mjs\" \"d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui\" --check=all",
+      "fullValidationAllowed": false,
+      "reason": "workspace validation passed; run complete finish readiness before final delivery"
+    },
+    "forbidden": [
+      "do not read validator source",
+      "do not rerun full validation when nextCheck.fullValidationAllowed=false",
+      "do not start preview/browser unless user explicitly asks",
+      "do not hand-edit repair ledger fields"
+    ]
+  },
+  "projectFileHashes": {
+    "finsage-ui.design": "a927b6e535e26451eab6ea74632dccce6d9e184cc5bb6e23c788758a1253180f",
+    "colors_and_type.css": "5fb06b93e381a0d8f347d98921107dfabe8b676408117995c8813a82c1283715",
+    "runtime-orchestration-summary.json": "ec1fbc7117fbc60c27915b42f518cb7716cba6951a5f00ebb1edf395f6d89f41",
+    "pages/companies.html": "6f6b184dfd8ebc8603122f2ff5bee5ee4c39cbb3449bacdb238e716141cce0ef",
+    "pages/company-detail.html": "86f54c99ac8883f60f4d0eafaede0f1f0122584fdc951eaa715a9f419496df31",
+    "pages/document-detail.html": "d46134af8c42a041ad433b23998c7d7c57d828f52949b73f56fa1a7b6105b2a0",
+    "pages/documents.html": "fe926482a486af7d27ce98dec18bc9cae39705e3529c0d1fb36a3edd7348d97e",
+    "pages/history.html": "f2be50e4ddf23234b4347a5b6a492cafbcce86fef02735da4a6e0c16f62d6318",
+    "pages/index.html": "734ac8a2b4ebeaa7257d99d09779b14fffe8f8f286951e095542c85b3d053552",
+    "pages/research-result.html": "7bd7d712660c6db4704b0e809ec827d76abe8d9875648a10ef73a6edeea33a87",
+    "pages/research-running.html": "fd6b2b3c2886dbf240baaf867268e175db5e8d685872128d5d86f70b1a7fb997",
+    "pages/settings.html": "2c57be9187b0ab0bb74c0245828f9ae75a6b93175a55c4e358bc3c1e31242fa3"
+  },
+  "designDir": "d:\\Weijn\\Codes\\Github\\FinSage\\finsage-ui",
+  "expectedPages": null,
+  "requireInteractions": null,
+  "checkedAt": "2026-08-23T09:07:05.589Z"
+}

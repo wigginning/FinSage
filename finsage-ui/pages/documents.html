@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinSage — 文档库</title>
+    <style id="theme-vars">
+/* FinSage UI — Professional Institutional Finance Design Tokens */
+/* Light mode default; dark mode toggled via <html class="dark"> */
+
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+}
+
+:root {
+  /* Brand primary: deep indigo */
+  --brand-50: #eef4ff;
+  --brand-100: #dbeafe;
+  --brand-200: #bfdbfe;
+  --brand-300: #93c5fd;
+  --brand-400: #60a5fa;
+  --brand-500: #3b82f6;
+  --brand-600: #2563eb;
+  --brand-700: #1d4ed8;
+  --brand-800: #1e40af;
+  --brand-900: #1e3a8a;
+
+  /* Neutral: cool slate */
+  --neutral-0: #ffffff;
+  --neutral-50: #f8fafc;
+  --neutral-100: #f1f5f9;
+  --neutral-200: #e2e8f0;
+  --neutral-300: #cbd5e1;
+  --neutral-400: #94a3b8;
+  --neutral-500: #64748b;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1e293b;
+  --neutral-900: #0f172a;
+
+  /* State semantic */
+  --state-success: #059669;
+  --state-success-bg: #ecfdf5;
+  --state-warning: #d97706;
+  --state-warning-bg: #fffbeb;
+  --state-error: #dc2626;
+  --state-error-bg: #fef2f2;
+  --state-info: #2563eb;
+  --state-info-bg: #eff6ff;
+  --state-queued: #64748b;
+  --state-queued-bg: #f1f5f9;
+  --state-streaming: #7c3aed;
+  --state-streaming-bg: #f3e8ff;
+  --state-verifying: #f59e0b;
+  --state-verifying-bg: #fffbeb;
+  --state-aborted: #475569;
+  --state-aborted-bg: #e2e8f0;
+
+  /* Spacing scale (8pt grid) */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 80px;
+
+  /* Radius */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Shadow */
+  --shadow-1: 0 1px 2px rgba(15, 23, 42, 0.05), 0 1px 1px rgba(15, 23, 42, 0.03);
+  --shadow-2: 0 8px 24px -8px rgba(15, 23, 42, 0.12);
+  --shadow-3: 0 24px 60px -20px rgba(15, 23, 42, 0.22);
+
+  /* Typography */
+  --font-sans: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", "Fira Code", "Noto Sans Mono", monospace;
+
+  /* Semantic tokens — light */
+  --background: var(--neutral-50);
+  --foreground: var(--neutral-900);
+  --card: var(--neutral-0);
+  --card-foreground: var(--neutral-900);
+  --popover: var(--neutral-0);
+  --popover-foreground: var(--neutral-900);
+  --primary: var(--brand-700);
+  --primary-foreground: var(--neutral-0);
+  --muted: var(--neutral-100);
+  --muted-foreground: var(--neutral-500);
+  --border: var(--neutral-200);
+  --input: var(--neutral-200);
+  --ring: var(--brand-500);
+}
+
+html.dark {
+  /* Semantic tokens — dark */
+  --background: #0b0c10;
+  --foreground: var(--neutral-100);
+  --card: #12131a;
+  --card-foreground: var(--neutral-100);
+  --popover: #12131a;
+  --popover-foreground: var(--neutral-100);
+  --primary: var(--brand-500);
+  --primary-foreground: var(--neutral-0);
+  --muted: #1a1c25;
+  --muted-foreground: var(--neutral-400);
+  --border: #272a36;
+  --input: #272a36;
+  --ring: var(--brand-400);
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(0, 0, 0, 0.15);
+  --shadow-2: 0 8px 24px -8px rgba(0, 0, 0, 0.45);
+  --shadow-3: 0 24px 60px -20px rgba(0, 0, 0, 0.65);
+}
+
+/* Base typography */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--background);
+  color: var(--foreground);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Type scale utilities */
+.text-display {
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.08;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.text-h1 {
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.text-h2 {
+  font-size: clamp(22px, 2.2vw, 28px);
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.text-h3 {
+  font-size: 18px;
+  line-height: 1.35;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.text-body-lg {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.text-body {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.text-caption {
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: 0.005em;
+}
+
+.text-mono {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tabular numbers for financial data */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --radius-sm: var(--radius-sm);
+    --radius-md: var(--radius-md);
+    --radius-lg: var(--radius-lg);
+    --radius-xl: var(--radius-xl);
+  }
+  @layer base {
+    body { background: var(--background); color: var(--foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--background); }
+      .text-background { color: var(--background); }
+      .border-background { border-color: var(--background); }
+      .ring-background { --tw-ring-color: var(--background); }
+      .bg-foreground { background-color: var(--foreground); }
+      .text-foreground { color: var(--foreground); }
+      .border-foreground { border-color: var(--foreground); }
+      .ring-foreground { --tw-ring-color: var(--foreground); }
+      .bg-card { background-color: var(--card); }
+      .text-card { color: var(--card); }
+      .border-card { border-color: var(--card); }
+      .ring-card { --tw-ring-color: var(--card); }
+      .bg-card-foreground { background-color: var(--card-foreground); }
+      .text-card-foreground { color: var(--card-foreground); }
+      .border-card-foreground { border-color: var(--card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--card-foreground); }
+      .bg-popover { background-color: var(--popover); }
+      .text-popover { color: var(--popover); }
+      .border-popover { border-color: var(--popover); }
+      .ring-popover { --tw-ring-color: var(--popover); }
+      .bg-popover-foreground { background-color: var(--popover-foreground); }
+      .text-popover-foreground { color: var(--popover-foreground); }
+      .border-popover-foreground { border-color: var(--popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--popover-foreground); }
+      .bg-primary { background-color: var(--primary); }
+      .text-primary { color: var(--primary); }
+      .border-primary { border-color: var(--primary); }
+      .ring-primary { --tw-ring-color: var(--primary); }
+      .bg-primary-foreground { background-color: var(--primary-foreground); }
+      .text-primary-foreground { color: var(--primary-foreground); }
+      .border-primary-foreground { border-color: var(--primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--primary-foreground); }
+      .bg-muted { background-color: var(--muted); }
+      .text-muted { color: var(--muted); }
+      .border-muted { border-color: var(--muted); }
+      .ring-muted { --tw-ring-color: var(--muted); }
+      .bg-muted-foreground { background-color: var(--muted-foreground); }
+      .text-muted-foreground { color: var(--muted-foreground); }
+      .border-muted-foreground { border-color: var(--muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--muted-foreground); }
+      .bg-border { background-color: var(--border); }
+      .text-border { color: var(--border); }
+      .border-border { border-color: var(--border); }
+      .ring-border { --tw-ring-color: var(--border); }
+      .bg-input { background-color: var(--input); }
+      .text-input { color: var(--input); }
+      .border-input { border-color: var(--input); }
+      .ring-input { --tw-ring-color: var(--input); }
+      .bg-ring { background-color: var(--ring); }
+      .text-ring { color: var(--ring); }
+      .border-ring { border-color: var(--ring); }
+      .ring-ring { --tw-ring-color: var(--ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="min-h-screen bg-[var(--background)] text-[var(--foreground)] antialiased">
+  <header class="fixed top-0 left-0 right-0 h-14 bg-[var(--card)] border-b border-[var(--border)] z-50 flex items-center justify-between px-4">
+    <div class="flex items-center gap-3">
+      <a href="index.html" id="nav-logo" data-dom-id="nav-logo" class="flex items-center gap-2 text-[var(--primary)] hover:opacity-90 transition-opacity">
+        <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+        <span class="text-lg font-semibold tracking-tight">FinSage</span>
+      </a>
+      <span class="text-[var(--muted-foreground)] text-xs px-2 py-0.5 bg-[var(--muted)] rounded">v3.4</span>
+    </div>
+    <div class="flex-1 max-w-xl mx-6">
+      <div class="relative">
+        <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted-foreground)]"></i>
+        <input type="text" placeholder="搜索公司、文档、研究任务…" class="w-full h-9 pl-9 pr-4 text-sm bg-[var(--muted)] border border-[var(--border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ring)] focus:border-transparent placeholder:text-[var(--muted-foreground)]">
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <button class="p-2 text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] rounded-md transition-colors" aria-label="通知"><i data-lucide="bell" class="w-5 h-5"></i></button>
+      <button class="p-2 text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] rounded-md transition-colors" aria-label="主题"><i data-lucide="moon" class="w-5 h-5"></i></button>
+      <div class="flex items-center gap-2 pl-3 border-l border-[var(--border)]">
+        <div class="w-8 h-8 rounded-full bg-[var(--primary)] text-white flex items-center justify-center text-sm font-medium">A</div>
+        <span class="text-sm font-medium hidden lg:block">analyst@finsage.io</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="flex pt-14 min-h-screen">
+    <aside class="fixed top-14 left-0 bottom-0 w-60 bg-[var(--card)] border-r border-[var(--border)] z-40 flex flex-col">
+      <nav class="flex-1 p-3 space-y-1">
+        <a href="index.html" id="nav-index" data-dom-id="nav-index" class="nav-item flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors"><i data-lucide="layout-dashboard" class="w-4.5 h-4.5 text-[var(--muted-foreground)]"></i><span>研究工作台</span></a>
+        <a href="companies.html" id="nav-companies" data-dom-id="nav-companies" class="nav-item flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors"><i data-lucide="building-2" class="w-4.5 h-4.5 text-[var(--muted-foreground)]"></i><span>公司库</span></a>
+        <a href="documents.html" id="nav-documents" data-dom-id="nav-documents" class="nav-item flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md bg-[var(--muted)] text-[var(--primary)] transition-colors" aria-current="page"><i data-lucide="file-text" class="w-4.5 h-4.5 text-[var(--primary)]"></i><span>文档库</span></a>
+        <a href="history.html" id="nav-history" data-dom-id="nav-history" class="nav-item flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors"><i data-lucide="history" class="w-4.5 h-4.5 text-[var(--muted-foreground)]"></i><span>研究历史</span></a>
+        <div class="pt-4 mt-4 border-t border-[var(--border)]">
+          <a href="settings.html" id="nav-settings" data-dom-id="nav-settings" class="nav-item flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors"><i data-lucide="settings" class="w-4.5 h-4.5 text-[var(--muted-foreground)]"></i><span>设置</span></a>
+        </div>
+      </nav>
+      <div class="p-3 border-t border-[var(--border)]">
+        <div class="px-3 py-2 rounded-md bg-[var(--muted)]">
+          <p class="text-xs text-[var(--muted-foreground)] mb-1">系统状态</p>
+          <div class="flex items-center gap-2 text-xs text-[var(--state-success)]"><span class="w-1.5 h-1.5 rounded-full bg-[var(--state-success)]"></span><span>所有服务正常</span></div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="flex-1 ml-60 min-h-[calc(100vh-3.5rem)]">
+      <div class="max-w-[1440px] mx-auto p-6 space-y-6">
+        <!-- Page header -->
+        <section class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <h1 class="text-h2 text-[var(--foreground)]">文档库</h1>
+            <p class="text-sm text-[var(--muted-foreground)] mt-1">上传、管理与检索研究材料</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-sm text-[var(--muted-foreground)]">8 份文档</span>
+            <button class="inline-flex items-center justify-center gap-2 h-9 px-4 text-sm font-medium rounded-md bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--brand-800)] transition-colors shadow-sm">
+              <i data-lucide="upload" class="w-4 h-4"></i>
+              <span>上传文档</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Upload / ingest area -->
+        <section class="bg-[var(--card)] border border-dashed border-[var(--border)] rounded-lg p-6 shadow-[var(--shadow-1)]" aria-labelledby="upload-heading">
+          <h2 id="upload-heading" class="sr-only">文档上传与解析</h2>
+          <label for="doc-upload" class="flex flex-col items-center justify-center gap-3 cursor-pointer rounded-md p-4 hover:bg-[var(--muted)] transition-colors">
+            <div class="w-12 h-12 rounded-full bg-[var(--brand-50)] flex items-center justify-center text-[var(--primary)]">
+              <i data-lucide="upload-cloud" class="w-6 h-6"></i>
+            </div>
+            <div class="text-center">
+              <p class="text-sm font-medium text-[var(--foreground)]">拖放文件到此处，或点击上传</p>
+              <p class="text-xs text-[var(--muted-foreground)] mt-1">支持 PDF、Markdown、HTML；单文件最大 50 MB</p>
+            </div>
+            <input id="doc-upload" type="file" accept=".pdf,.md,.html,.htm,application/pdf,text/markdown,text/html" multiple class="hidden">
+          </label>
+        </section>
+
+        <!-- Filter bar -->
+        <section class="bg-[var(--card)] border border-[var(--border)] rounded-lg p-4 shadow-[var(--shadow-1)]" aria-label="文档筛选">
+          <div class="flex flex-col xl:flex-row gap-3">
+            <div class="relative flex-1 min-w-[220px]">
+              <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted-foreground)]"></i>
+              <input type="text" placeholder="搜索文档名称或关键词…" class="w-full h-9 pl-9 pr-4 text-sm bg-[var(--muted)] border border-[var(--border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ring)] focus:border-transparent placeholder:text-[var(--muted-foreground)]">
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3 flex-1 xl:flex-none">
+              <select aria-label="文档类型" class="h-9 px-3 text-sm bg-[var(--muted)] border border-[var(--border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ring)] text-[var(--foreground)]">
+                <option value="">全部类型</option>
+                <option value="10-K">10-K</option>
+                <option value="10-Q">10-Q</option>
+                <option value="earnings-call">Earnings Call</option>
+                <option value="earnings-release">Earnings Release</option>
+                <option value="report">Report</option>
+                <option value="news">News</option>
+              </select>
+              <select aria-label="来源" class="h-9 px-3 text-sm bg-[var(--muted)] border border-[var(--border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ring)] text-[var(--foreground)]">
+                <option value="">全部来源</option>
+                <option value="sec">SEC EDGAR</option>
+                <option value="company">公司官网</option>
+                <option value="bloomberg">Bloomberg</option>
+                <option value="reuters">Reuters</option>
+                <option value="internal">内部研究</option>
+              </select>
+              <select aria-label="来源公司" class="h-9 px-3 text-sm bg-[var(--muted)] border border-[var(--border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ring)] text-[var(--foreground)]">
+                <option value="">全部公司</option>
+                <option value="AAPL">Apple Inc.</option>
+                <option value="MSFT">Microsoft Corp.</option>
+                <option value="NVDA">NVIDIA Corp.</option>
+                <option value="TSLA">Tesla Inc.</option>
+                <option value="AMZN">Amazon.com Inc.</option>
+                <option value="JPM">JPMorgan Chase &amp; Co.</option>
+                <option value="GOOGL">Alphabet Inc.</option>
+                <option value="BRK.B">Berkshire Hathaway Inc.</option>
+              </select>
+              <select aria-label="报告期" class="h-9 px-3 text-sm bg-[var(--muted)] border border-[var(--border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ring)] text-[var(--foreground)]">
+                <option value="">全部报告期</option>
+                <option value="fy2025">FY2025</option>
+                <option value="q1-fy2025">Q1 FY2025</option>
+                <option value="q3-2024">Q3 2024</option>
+                <option value="fy2024">FY2024</option>
+                <option value="fy2023">FY2023</option>
+              </select>
+              <select aria-label="状态" class="h-9 px-3 text-sm bg-[var(--muted)] border border-[var(--border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ring)] text-[var(--foreground)]">
+                <option value="">全部状态</option>
+                <option value="processed">已处理</option>
+                <option value="processing">处理中</option>
+                <option value="failed">处理失败</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <!-- Documents table -->
+        <section class="bg-[var(--card)] border border-[var(--border)] rounded-lg shadow-[var(--shadow-1)] overflow-hidden" aria-labelledby="documents-heading">
+          <h2 id="documents-heading" class="sr-only">文档列表</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="border-b border-[var(--border)] bg-[var(--muted)]">
+                  <th scope="col" class="px-4 py-3 text-xs font-semibold text-[var(--muted-foreground)] uppercase tracking-wide">文档名称</th>
+                  <th scope="col" class="px-4 py-3 text-xs font-semibold text-[var(--muted-foreground)] uppercase tracking-wide">类型</th>
+                  <th scope="col" class="px-4 py-3 text-xs font-semibold text-[var(--muted-foreground)] uppercase tracking-wide">来源公司</th>
+                  <th scope="col" class="px-4 py-3 text-xs font-semibold text-[var(--muted-foreground)] uppercase tracking-wide">报告期</th>
+                  <th scope="col" class="px-4 py-3 text-xs font-semibold text-[var(--muted-foreground)] uppercase tracking-wide">状态</th>
+                  <th scope="col" class="px-4 py-3 text-xs font-semibold text-[var(--muted-foreground)] uppercase tracking-wide text-right">chunk 数</th>
+                  <th scope="col" class="px-4 py-3 text-xs font-semibold text-[var(--muted-foreground)] uppercase tracking-wide text-right">引用次数</th>
+                  <th scope="col" class="px-4 py-3 text-xs font-semibold text-[var(--muted-foreground)] uppercase tracking-wide text-right">操作</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-[var(--border)]">
+                <tr class="hover:bg-[var(--neutral-50)] transition-colors">
+                  <td class="px-4 py-3">
+                    <a href="document-detail.html" class="flex items-center gap-2 text-sm font-medium text-[var(--primary)] hover:underline">
+                      <i data-lucide="file-text" class="w-4 h-4 text-[var(--muted-foreground)]"></i>
+                      <span>Apple Inc. 10-K 2024</span>
+                    </a>
+                  </td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)]">10-K</td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)]">Apple Inc.</td>
+                  <td class="px-4 py-3 text-sm text-[var(--muted-foreground)] tabular">FY2024</td>
+                  <td class="px-4 py-3"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-medium bg-[var(--state-success-bg)] text-[var(--state-success)]"><span class="w-1.5 h-1.5 rounded-full bg-[var(--state-success)]"></span>已处理</span></td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)] text-right tabular">324</td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)] text-right tabular">142</td>
+                  <td class="px-4 py-3 text-right">
+                    <button class="inline-flex items-center justify-center w-8 h-8 text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] rounded-md transition-colors" aria-label="更多操作"><i data-lucide="more-horizontal" class="w-4 h-4"></i></button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-[var(--neutral-50)] transition-colors">
+                  <td class="px-4 py-3">
+                    <a href="document-detail.html" class="flex items-center gap-2 text-sm font-medium text-[var(--primary)] hover:underline">
+                      <i data-lucide="file-text" class="w-4 h-4 text-[var(--muted-foreground)]"></i>
+                      <span>Microsoft Q1 FY25 Earnings Call Transcript</span>
+                    </a>
+                  </td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)]">Earnings Call</td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)]">Microsoft Corp.</td>
+                  <td class="px-4 py-3 text-sm text-[var(--muted-foreground)] tabular">Q1 FY2025</td>
+                  <td class="px-4 py-3"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-medium bg-[var(--state-success-bg)] text-[var(--state-success)]"><span class="w-1.5 h-1.5 rounded-full bg-[var(--state-success)]"></span>已处理</span></td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)] text-right tabular">186</td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)] text-right tabular">89</td>
+                  <td class="px-4 py-3 text-right">
+                    <button class="inline-flex items-center justify-center w-8 h-8 text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] rounded-md transition-colors" aria-label="更多操作"><i data-lucide="more-horizontal" class="w-4 h-4"></i></button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-[var(--neutral-50)] transition-colors">
+                  <td class="px-4 py-3">
+                    <a href="document-detail.html" class="flex items-center gap-2 text-sm font-medium text-[var(--primary)] hover:underline">
+                      <i data-lucide="file-text" class="w-4 h-4 text-[var(--muted-foreground)]"></i>
+                      <span>NVIDIA 10-Q Q3 FY25</span>
+                    </a>
+                  </td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)]">10-Q</td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)]">NVIDIA Corp.</td>
+                  <td class="px-4 py-3 text-sm text-[var(--muted-foreground)] tabular">Q3 FY2025</td>
+                  <td class="px-4 py-3"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-medium bg-[var(--state-success-bg)] text-[var(--state-success)]"><span class="w-1.5 h-1.5 rounded-full bg-[var(--state-success)]"></span>已处理</span></td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)] text-right tabular">210</td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)] text-right tabular">215</td>
+                  <td class="px-4 py-3 text-right">
+                    <button class="inline-flex items-center justify-center w-8 h-8 text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] rounded-md transition-colors" aria-label="更多操作"><i data-lucide="more-horizontal" class="w-4 h-4"></i></button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-[var(--neutral-50)] transition-colors">
+                  <td class="px-4 py-3">
+                    <a href="document-detail.html" class="flex items-center gap-2 text-sm font-medium text-[var(--primary)] hover:underline">
+                      <i data-lucide="file-text" class="w-4 h-4 text-[var(--muted-foreground)]"></i>
+                      <span>Tesla Q3 2024 Vehicle Production &amp; Deliveries Report</span>
+                    </a>
+                  </td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)]">Report</td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)]">Tesla Inc.</td>
+                  <td class="px-4 py-3 text-sm text-[var(--muted-foreground)] tabular">Q3 2024</td>
+                  <td class="px-4 py-3"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-medium bg-[var(--state-info-bg)] text-[var(--state-info)]"><i data-lucide="loader" class="w-3.5 h-3.5 animate-spin"></i>处理中</span></td>
+                  <td class="px-4 py-3 text-sm text-[var(--muted-foreground)] text-right tabular">—</td>
+                  <td class="px-4 py-3 text-sm text-[var(--muted-foreground)] text-right tabular">—</td>
+                  <td class="px-4 py-3 text-right">
+                    <button class="inline-flex items-center justify-center w-8 h-8 text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] rounded-md transition-colors" aria-label="更多操作"><i data-lucide="more-horizontal" class="w-4 h-4"></i></button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-[var(--neutral-50)] transition-colors">
+                  <td class="px-4 py-3">
+                    <a href="document-detail.html" class="flex items-center gap-2 text-sm font-medium text-[var(--primary)] hover:underline">
+                      <i data-lucide="file-text" class="w-4 h-4 text-[var(--muted-foreground)]"></i>
+                      <span>Amazon.com 10-K 2023</span>
+                    </a>
+                  </td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)]">10-K</td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)]">Amazon.com Inc.</td>
+                  <td class="px-4 py-3 text-sm text-[var(--muted-foreground)] tabular">FY2023</td>
+                  <td class="px-4 py-3"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-medium bg-[var(--state-success-bg)] text-[var(--state-success)]"><span class="w-1.5 h-1.5 rounded-full bg-[var(--state-success)]"></span>已处理</span></td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)] text-right tabular">256</td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)] text-right tabular">78</td>
+                  <td class="px-4 py-3 text-right">
+                    <button class="inline-flex items-center justify-center w-8 h-8 text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] rounded-md transition-colors" aria-label="更多操作"><i data-lucide="more-horizontal" class="w-4 h-4"></i></button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-[var(--neutral-50)] transition-colors">
+                  <td class="px-4 py-3">
+                    <a href="document-detail.html" class="flex items-center gap-2 text-sm font-medium text-[var(--primary)] hover:underline">
+                      <i data-lucide="file-text" class="w-4 h-4 text-[var(--muted-foreground)]"></i>
+                      <span>JPMorgan Chase Q3 2024 Earnings Release</span>
+                    </a>
+                  </td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)]">Earnings Release</td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)]">JPMorgan Chase &amp; Co.</td>
+                  <td class="px-4 py-3 text-sm text-[var(--muted-foreground)] tabular">Q3 2024</td>
+                  <td class="px-4 py-3"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-medium bg-[var(--state-error-bg)] text-[var(--state-error)]"><i data-lucide="alert-circle" class="w-3.5 h-3.5"></i>处理失败</span></td>
+                  <td class="px-4 py-3 text-sm text-[var(--muted-foreground)] text-right tabular">—</td>
+                  <td class="px-4 py-3 text-sm text-[var(--muted-foreground)] text-right tabular">—</td>
+                  <td class="px-4 py-3 text-right">
+                    <div class="flex items-center justify-end gap-1">
+                      <button class="inline-flex items-center justify-center w-8 h-8 text-[var(--state-error)] hover:bg-[var(--state-error-bg)] rounded-md transition-colors" aria-label="重新解析"><i data-lucide="refresh-cw" class="w-4 h-4"></i></button>
+                      <button class="inline-flex items-center justify-center w-8 h-8 text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] rounded-md transition-colors" aria-label="更多操作"><i data-lucide="more-horizontal" class="w-4 h-4"></i></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="hover:bg-[var(--neutral-50)] transition-colors">
+                  <td class="px-4 py-3">
+                    <a href="document-detail.html" class="flex items-center gap-2 text-sm font-medium text-[var(--primary)] hover:underline">
+                      <i data-lucide="file-text" class="w-4 h-4 text-[var(--muted-foreground)]"></i>
+                      <span>Alphabet Q3 2024 10-Q</span>
+                    </a>
+                  </td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)]">10-Q</td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)]">Alphabet Inc.</td>
+                  <td class="px-4 py-3 text-sm text-[var(--muted-foreground)] tabular">Q3 2024</td>
+                  <td class="px-4 py-3"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-medium bg-[var(--state-info-bg)] text-[var(--state-info)]"><i data-lucide="loader" class="w-3.5 h-3.5 animate-spin"></i>处理中</span></td>
+                  <td class="px-4 py-3 text-sm text-[var(--muted-foreground)] text-right tabular">—</td>
+                  <td class="px-4 py-3 text-sm text-[var(--muted-foreground)] text-right tabular">—</td>
+                  <td class="px-4 py-3 text-right">
+                    <button class="inline-flex items-center justify-center w-8 h-8 text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] rounded-md transition-colors" aria-label="更多操作"><i data-lucide="more-horizontal" class="w-4 h-4"></i></button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-[var(--neutral-50)] transition-colors">
+                  <td class="px-4 py-3">
+                    <a href="document-detail.html" class="flex items-center gap-2 text-sm font-medium text-[var(--primary)] hover:underline">
+                      <i data-lucide="file-text" class="w-4 h-4 text-[var(--muted-foreground)]"></i>
+                      <span>Berkshire Hathaway 2023 Annual Report (10-K)</span>
+                    </a>
+                  </td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)]">10-K</td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)]">Berkshire Hathaway Inc.</td>
+                  <td class="px-4 py-3 text-sm text-[var(--muted-foreground)] tabular">FY2023</td>
+                  <td class="px-4 py-3"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-medium bg-[var(--state-success-bg)] text-[var(--state-success)]"><span class="w-1.5 h-1.5 rounded-full bg-[var(--state-success)]"></span>已处理</span></td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)] text-right tabular">198</td>
+                  <td class="px-4 py-3 text-sm text-[var(--foreground)] text-right tabular">56</td>
+                  <td class="px-4 py-3 text-right">
+                    <button class="inline-flex items-center justify-center w-8 h-8 text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] rounded-md transition-colors" aria-label="更多操作"><i data-lucide="more-horizontal" class="w-4 h-4"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Storage usage -->
+          <div class="border-t border-[var(--border)] px-4 py-3 bg-[var(--muted)]">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <div class="flex items-center gap-2 text-sm text-[var(--muted-foreground)]">
+                <i data-lucide="hard-drive" class="w-4 h-4"></i>
+                <span>已用 6.1 GB / 50 GB</span>
+              </div>
+              <div class="w-full sm:w-64 h-2 bg-[var(--neutral-200)] rounded-full overflow-hidden">
+                <div class="h-full bg-[var(--primary)] rounded-full" style="width: 12.2%;" aria-label="存储用量 12.2%"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script>lucide.createIcons();</script>
+</body>
+</html>

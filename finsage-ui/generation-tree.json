@@ -1,0 +1,249 @@
+{
+  "version": "1.0",
+  "root": {
+    "nodeId": "root",
+    "kind": "root",
+    "status": "generated",
+    "children": [
+      {
+        "nodeId": "gen-project-shell",
+        "kind": "project-shell",
+        "status": "pending",
+        "output": "partials/project-shell.html",
+        "sharedRegions": [
+          "header",
+          "sidebar",
+          "main-wrapper",
+          "footer",
+          "brand-css",
+          "type-scale",
+          "radius-shadow-model"
+        ],
+        "privateRegions": [],
+        "mutableSlots": [
+          "slot-active-nav-key",
+          "slot-page-title",
+          "slot-main-content"
+        ],
+        "children": [
+          {
+            "nodeId": "page-index",
+            "kind": "page-leaf",
+            "status": "pending",
+            "output": "pages/index.html",
+            "sharedRegions": [
+              "header",
+              "sidebar",
+              "main-wrapper",
+              "footer"
+            ],
+            "privateRegions": [
+              "slot-main-content"
+            ],
+            "mutableSlots": [
+              "slot-active-nav-key",
+              "slot-page-title",
+              "slot-main-content"
+            ],
+            "dependencies": [
+              "gen-project-shell"
+            ],
+            "children": []
+          },
+          {
+            "nodeId": "page-research-running",
+            "kind": "page-leaf",
+            "status": "pending",
+            "output": "pages/research-running.html",
+            "sharedRegions": [
+              "header",
+              "sidebar",
+              "main-wrapper",
+              "footer"
+            ],
+            "privateRegions": [
+              "slot-main-content"
+            ],
+            "mutableSlots": [
+              "slot-active-nav-key",
+              "slot-page-title",
+              "slot-main-content"
+            ],
+            "dependencies": [
+              "gen-project-shell"
+            ],
+            "children": []
+          },
+          {
+            "nodeId": "page-research-result",
+            "kind": "page-leaf",
+            "status": "pending",
+            "output": "pages/research-result.html",
+            "sharedRegions": [
+              "header",
+              "sidebar",
+              "main-wrapper",
+              "footer"
+            ],
+            "privateRegions": [
+              "slot-main-content"
+            ],
+            "mutableSlots": [
+              "slot-active-nav-key",
+              "slot-page-title",
+              "slot-main-content"
+            ],
+            "dependencies": [
+              "gen-project-shell"
+            ],
+            "children": []
+          },
+          {
+            "nodeId": "page-companies",
+            "kind": "page-leaf",
+            "status": "pending",
+            "output": "pages/companies.html",
+            "sharedRegions": [
+              "header",
+              "sidebar",
+              "main-wrapper",
+              "footer"
+            ],
+            "privateRegions": [
+              "slot-main-content"
+            ],
+            "mutableSlots": [
+              "slot-active-nav-key",
+              "slot-page-title",
+              "slot-main-content"
+            ],
+            "dependencies": [
+              "gen-project-shell"
+            ],
+            "children": []
+          },
+          {
+            "nodeId": "page-company-detail",
+            "kind": "page-leaf",
+            "status": "pending",
+            "output": "pages/company-detail.html",
+            "sharedRegions": [
+              "header",
+              "sidebar",
+              "main-wrapper",
+              "footer"
+            ],
+            "privateRegions": [
+              "slot-main-content"
+            ],
+            "mutableSlots": [
+              "slot-active-nav-key",
+              "slot-page-title",
+              "slot-main-content"
+            ],
+            "dependencies": [
+              "gen-project-shell"
+            ],
+            "children": []
+          },
+          {
+            "nodeId": "page-documents",
+            "kind": "page-leaf",
+            "status": "pending",
+            "output": "pages/documents.html",
+            "sharedRegions": [
+              "header",
+              "sidebar",
+              "main-wrapper",
+              "footer"
+            ],
+            "privateRegions": [
+              "slot-main-content"
+            ],
+            "mutableSlots": [
+              "slot-active-nav-key",
+              "slot-page-title",
+              "slot-main-content"
+            ],
+            "dependencies": [
+              "gen-project-shell"
+            ],
+            "children": []
+          },
+          {
+            "nodeId": "page-document-detail",
+            "kind": "page-leaf",
+            "status": "pending",
+            "output": "pages/document-detail.html",
+            "sharedRegions": [
+              "header",
+              "sidebar",
+              "main-wrapper",
+              "footer"
+            ],
+            "privateRegions": [
+              "slot-main-content"
+            ],
+            "mutableSlots": [
+              "slot-active-nav-key",
+              "slot-page-title",
+              "slot-main-content"
+            ],
+            "dependencies": [
+              "gen-project-shell"
+            ],
+            "children": []
+          },
+          {
+            "nodeId": "page-history",
+            "kind": "page-leaf",
+            "status": "pending",
+            "output": "pages/history.html",
+            "sharedRegions": [
+              "header",
+              "sidebar",
+              "main-wrapper",
+              "footer"
+            ],
+            "privateRegions": [
+              "slot-main-content"
+            ],
+            "mutableSlots": [
+              "slot-active-nav-key",
+              "slot-page-title",
+              "slot-main-content"
+            ],
+            "dependencies": [
+              "gen-project-shell"
+            ],
+            "children": []
+          },
+          {
+            "nodeId": "page-settings",
+            "kind": "page-leaf",
+            "status": "pending",
+            "output": "pages/settings.html",
+            "sharedRegions": [
+              "header",
+              "sidebar",
+              "main-wrapper",
+              "footer"
+            ],
+            "privateRegions": [
+              "slot-main-content"
+            ],
+            "mutableSlots": [
+              "slot-active-nav-key",
+              "slot-page-title",
+              "slot-main-content"
+            ],
+            "dependencies": [
+              "gen-project-shell"
+            ],
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

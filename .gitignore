@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+
+# 本地 git 凭据辅助脚本（含明文口令，不入库）
+.ssh_askpass.cmd
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyright/
+.coverage
+htmlcov/
+
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# 环境配置（真实密文绝不入库；仅 .env.example 作为样例入库）
+.env
+.env.*
+!.env.example
+
+# 运行时数据 / 模型兜底缓存（本地预下载目录 resources/models 保留在磁盘，勿删除；模型权重不入库）
+data/models-cache/
+resources/models/
+*.log
+
+# IDE / 系统
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# 前端构建产物（apps/web 子目录 .gitignore 已覆盖，此处双保险备查）
+.next/
+node_modules/
+
+# 内部工程文档（施工规格 / 任务文档 / 复盘日志 / ADR / 部署运维，仅本地保留，不入公开仓库）
+docs/SpecLog/
+docs/adr/
+docs/ops/

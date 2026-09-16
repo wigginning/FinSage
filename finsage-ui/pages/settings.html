@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinSage — 设置</title>
+    <style id="theme-vars">
+/* FinSage UI — Professional Institutional Finance Design Tokens */
+/* Light mode default; dark mode toggled via <html class="dark"> */
+
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+}
+
+:root {
+  /* Brand primary: deep indigo */
+  --brand-50: #eef4ff;
+  --brand-100: #dbeafe;
+  --brand-200: #bfdbfe;
+  --brand-300: #93c5fd;
+  --brand-400: #60a5fa;
+  --brand-500: #3b82f6;
+  --brand-600: #2563eb;
+  --brand-700: #1d4ed8;
+  --brand-800: #1e40af;
+  --brand-900: #1e3a8a;
+
+  /* Neutral: cool slate */
+  --neutral-0: #ffffff;
+  --neutral-50: #f8fafc;
+  --neutral-100: #f1f5f9;
+  --neutral-200: #e2e8f0;
+  --neutral-300: #cbd5e1;
+  --neutral-400: #94a3b8;
+  --neutral-500: #64748b;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1e293b;
+  --neutral-900: #0f172a;
+
+  /* State semantic */
+  --state-success: #059669;
+  --state-success-bg: #ecfdf5;
+  --state-warning: #d97706;
+  --state-warning-bg: #fffbeb;
+  --state-error: #dc2626;
+  --state-error-bg: #fef2f2;
+  --state-info: #2563eb;
+  --state-info-bg: #eff6ff;
+  --state-queued: #64748b;
+  --state-queued-bg: #f1f5f9;
+  --state-streaming: #7c3aed;
+  --state-streaming-bg: #f3e8ff;
+  --state-verifying: #f59e0b;
+  --state-verifying-bg: #fffbeb;
+  --state-aborted: #475569;
+  --state-aborted-bg: #e2e8f0;
+
+  /* Spacing scale (8pt grid) */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 80px;
+
+  /* Radius */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Shadow */
+  --shadow-1: 0 1px 2px rgba(15, 23, 42, 0.05), 0 1px 1px rgba(15, 23, 42, 0.03);
+  --shadow-2: 0 8px 24px -8px rgba(15, 23, 42, 0.12);
+  --shadow-3: 0 24px 60px -20px rgba(15, 23, 42, 0.22);
+
+  /* Typography */
+  --font-sans: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", "Fira Code", "Noto Sans Mono", monospace;
+
+  /* Semantic tokens — light */
+  --background: var(--neutral-50);
+  --foreground: var(--neutral-900);
+  --card: var(--neutral-0);
+  --card-foreground: var(--neutral-900);
+  --popover: var(--neutral-0);
+  --popover-foreground: var(--neutral-900);
+  --primary: var(--brand-700);
+  --primary-foreground: var(--neutral-0);
+  --muted: var(--neutral-100);
+  --muted-foreground: var(--neutral-500);
+  --border: var(--neutral-200);
+  --input: var(--neutral-200);
+  --ring: var(--brand-500);
+}
+
+html.dark {
+  /* Semantic tokens — dark */
+  --background: #0b0c10;
+  --foreground: var(--neutral-100);
+  --card: #12131a;
+  --card-foreground: var(--neutral-100);
+  --popover: #12131a;
+  --popover-foreground: var(--neutral-100);
+  --primary: var(--brand-500);
+  --primary-foreground: var(--neutral-0);
+  --muted: #1a1c25;
+  --muted-foreground: var(--neutral-400);
+  --border: #272a36;
+  --input: #272a36;
+  --ring: var(--brand-400);
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(0, 0, 0, 0.15);
+  --shadow-2: 0 8px 24px -8px rgba(0, 0, 0, 0.45);
+  --shadow-3: 0 24px 60px -20px rgba(0, 0, 0, 0.65);
+}
+
+/* Base typography */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--background);
+  color: var(--foreground);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Type scale utilities */
+.text-display {
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.08;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.text-h1 {
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.text-h2 {
+  font-size: clamp(22px, 2.2vw, 28px);
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.text-h3 {
+  font-size: 18px;
+  line-height: 1.35;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.text-body-lg {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.text-body {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.text-caption {
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: 0.005em;
+}
+
+.text-mono {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tabular numbers for financial data */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --radius-sm: var(--radius-sm);
+    --radius-md: var(--radius-md);
+    --radius-lg: var(--radius-lg);
+    --radius-xl: var(--radius-xl);
+  }
+  @layer base {
+    body { background: var(--background); color: var(--foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--background); }
+      .text-background { color: var(--background); }
+      .border-background { border-color: var(--background); }
+      .ring-background { --tw-ring-color: var(--background); }
+      .bg-foreground { background-color: var(--foreground); }
+      .text-foreground { color: var(--foreground); }
+      .border-foreground { border-color: var(--foreground); }
+      .ring-foreground { --tw-ring-color: var(--foreground); }
+      .bg-card { background-color: var(--card); }
+      .text-card { color: var(--card); }
+      .border-card { border-color: var(--card); }
+      .ring-card { --tw-ring-color: var(--card); }
+      .bg-card-foreground { background-color: var(--card-foreground); }
+      .text-card-foreground { color: var(--card-foreground); }
+      .border-card-foreground { border-color: var(--card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--card-foreground); }
+      .bg-popover { background-color: var(--popover); }
+      .text-popover { color: var(--popover); }
+      .border-popover { border-color: var(--popover); }
+      .ring-popover { --tw-ring-color: var(--popover); }
+      .bg-popover-foreground { background-color: var(--popover-foreground); }
+      .text-popover-foreground { color: var(--popover-foreground); }
+      .border-popover-foreground { border-color: var(--popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--popover-foreground); }
+      .bg-primary { background-color: var(--primary); }
+      .text-primary { color: var(--primary); }
+      .border-primary { border-color: var(--primary); }
+      .ring-primary { --tw-ring-color: var(--primary); }
+      .bg-primary-foreground { background-color: var(--primary-foreground); }
+      .text-primary-foreground { color: var(--primary-foreground); }
+      .border-primary-foreground { border-color: var(--primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--primary-foreground); }
+      .bg-muted { background-color: var(--muted); }
+      .text-muted { color: var(--muted); }
+      .border-muted { border-color: var(--muted); }
+      .ring-muted { --tw-ring-color: var(--muted); }
+      .bg-muted-foreground { background-color: var(--muted-foreground); }
+      .text-muted-foreground { color: var(--muted-foreground); }
+      .border-muted-foreground { border-color: var(--muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--muted-foreground); }
+      .bg-border { background-color: var(--border); }
+      .text-border { color: var(--border); }
+      .border-border { border-color: var(--border); }
+      .ring-border { --tw-ring-color: var(--border); }
+      .bg-input { background-color: var(--input); }
+      .text-input { color: var(--input); }
+      .border-input { border-color: var(--input); }
+      .ring-input { --tw-ring-color: var(--input); }
+      .bg-ring { background-color: var(--ring); }
+      .text-ring { color: var(--ring); }
+      .border-ring { border-color: var(--ring); }
+      .ring-ring { --tw-ring-color: var(--ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="min-h-screen bg-[var(--background)] text-[var(--foreground)] antialiased">
+  <header class="fixed top-0 left-0 right-0 h-14 bg-[var(--card)] border-b border-[var(--border)] z-50 flex items-center justify-between px-4">
+    <div class="flex items-center gap-3">
+      <a href="index.html" id="nav-logo" data-dom-id="nav-logo" class="flex items-center gap-2 text-[var(--primary)] hover:opacity-90 transition-opacity">
+        <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+        <span class="text-lg font-semibold tracking-tight">FinSage</span>
+      </a>
+      <span class="text-[var(--muted-foreground)] text-xs px-2 py-0.5 bg-[var(--muted)] rounded">v3.4</span>
+    </div>
+    <div class="flex-1 max-w-xl mx-6">
+      <div class="relative">
+        <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted-foreground)]"></i>
+        <input type="text" placeholder="搜索公司、文档、研究任务…" class="w-full h-9 pl-9 pr-4 text-sm bg-[var(--muted)] border border-[var(--border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ring)] focus:border-transparent placeholder:text-[var(--muted-foreground)]">
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <button class="p-2 text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] rounded-md transition-colors" aria-label="通知"><i data-lucide="bell" class="w-5 h-5"></i></button>
+      <button id="theme-toggle" class="p-2 text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] rounded-md transition-colors" aria-label="主题"><i data-lucide="moon" class="w-5 h-5"></i></button>
+      <div class="flex items-center gap-2 pl-3 border-l border-[var(--border)]">
+        <div class="w-8 h-8 rounded-full bg-[var(--primary)] text-white flex items-center justify-center text-sm font-medium">A</div>
+        <span class="text-sm font-medium hidden lg:block">analyst@finsage.io</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="flex pt-14 min-h-screen">
+    <aside class="fixed top-14 left-0 bottom-0 w-60 bg-[var(--card)] border-r border-[var(--border)] z-40 flex flex-col">
+      <nav class="flex-1 p-3 space-y-1">
+        <a href="index.html" id="nav-index" data-dom-id="nav-index" class="nav-item flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
+          <i data-lucide="layout-dashboard" class="w-4.5 h-4.5 text-[var(--muted-foreground)]"></i>
+          <span>研究工作台</span>
+        </a>
+        <a href="companies.html" id="nav-companies" data-dom-id="nav-companies" class="nav-item flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
+          <i data-lucide="building-2" class="w-4.5 h-4.5 text-[var(--muted-foreground)]"></i>
+          <span>公司库</span>
+        </a>
+        <a href="documents.html" id="nav-documents" data-dom-id="nav-documents" class="nav-item flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
+          <i data-lucide="file-text" class="w-4.5 h-4.5 text-[var(--muted-foreground)]"></i>
+          <span>文档库</span>
+        </a>
+        <a href="history.html" id="nav-history" data-dom-id="nav-history" class="nav-item flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors">
+          <i data-lucide="history" class="w-4.5 h-4.5 text-[var(--muted-foreground)]"></i>
+          <span>研究历史</span>
+        </a>
+        <div class="pt-4 mt-4 border-t border-[var(--border)]">
+          <a href="settings.html" id="nav-settings" data-dom-id="nav-settings" class="nav-item flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md bg-[var(--brand-50)] text-[var(--primary)] dark:bg-[var(--brand-900)]/30 dark:text-[var(--brand-300)]" aria-current="page">
+            <i data-lucide="settings" class="w-4.5 h-4.5 text-[var(--primary)]"></i>
+            <span>设置</span>
+          </a>
+        </div>
+      </nav>
+      <div class="p-3 border-t border-[var(--border)]">
+        <div class="px-3 py-2 rounded-md bg-[var(--muted)]">
+          <p class="text-xs text-[var(--muted-foreground)] mb-1">系统状态</p>
+          <div class="flex items-center gap-2 text-xs text-[var(--state-success)]">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--state-success)]"></span>
+            <span>所有服务正常</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="flex-1 ml-60 min-h-[calc(100vh-3.5rem)]">
+      <div class="max-w-[1440px] mx-auto p-6">
+        <div class="mb-6">
+          <h1 class="text-h2 mb-1">设置</h1>
+          <p class="text-body text-[var(--muted-foreground)]">管理账户、API、通知与研究偏好</p>
+        </div>
+
+        <form id="settings-form" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- User / Session -->
+          <section class="bg-[var(--card)] border border-[var(--border)] rounded-lg p-5 shadow-[var(--shadow-1)]">
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="user" class="w-5 h-5 text-[var(--primary)]"></i>
+              <h2 class="text-h3">用户与会话</h2>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <label for="user-email" class="block text-sm font-medium mb-1.5">登录邮箱</label>
+                <input id="user-email" type="email" value="analyst@finsage.io" disabled class="w-full h-10 px-3 text-sm bg-[var(--muted)] border border-[var(--border)] rounded-md text-[var(--muted-foreground)] cursor-not-allowed" aria-describedby="user-email-help">
+                <p id="user-email-help" class="mt-1.5 text-xs text-[var(--muted-foreground)]">由身份提供者托管，不可在此修改。</p>
+              </div>
+              <div>
+                <label for="user-role" class="block text-sm font-medium mb-1.5">角色</label>
+                <input id="user-role" type="text" value="机构分析师" disabled class="w-full h-10 px-3 text-sm bg-[var(--muted)] border border-[var(--border)] rounded-md text-[var(--muted-foreground)] cursor-not-allowed">
+              </div>
+              <div>
+                <label for="session-id" class="block text-sm font-medium mb-1.5">当前会话 ID</label>
+                <div class="relative">
+                  <input id="session-id" type="text" value="fs-sess-8f7d9a2b-4c1e-4f3a-9b8e-1d2c3a4b5c6d" readonly class="w-full h-10 pl-3 pr-10 text-sm font-mono bg-[var(--muted)] border border-[var(--border)] rounded-md text-[var(--muted-foreground)]">
+                  <button type="button" class="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-[var(--muted-foreground)] hover:text-[var(--foreground)] rounded" aria-label="复制会话 ID" data-copy="session-id"><i data-lucide="copy" class="w-4 h-4"></i></button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- API Client -->
+          <section class="bg-[var(--card)] border border-[var(--border)] rounded-lg p-5 shadow-[var(--shadow-1)]">
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="code-2" class="w-5 h-5 text-[var(--primary)]"></i>
+              <h2 class="text-h3">API Client</h2>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <label for="openapi-endpoint" class="block text-sm font-medium mb-1.5">OpenAPI endpoint URL</label>
+                <input id="openapi-endpoint" type="url" value="/openapi.json" class="w-full h-10 px-3 text-sm font-mono bg-[var(--muted)] border border-[var(--border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ring)] focus:border-transparent" aria-describedby="openapi-endpoint-help">
+                <p id="openapi-endpoint-help" class="mt-1.5 text-xs text-[var(--muted-foreground)]">前端 API Client 必须由此 OpenAPI Contract 生成。</p>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label for="request-timeout" class="block text-sm font-medium mb-1.5">请求超时 (ms)</label>
+                  <input id="request-timeout" type="number" value="30000" min="1000" step="1000" class="w-full h-10 px-3 text-sm font-mono bg-[var(--muted)] border border-[var(--border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ring)] focus:border-transparent">
+                </div>
+                <div>
+                  <label for="response-timeout" class="block text-sm font-medium mb-1.5">响应超时 (ms)</label>
+                  <input id="response-timeout" type="number" value="120000" min="1000" step="1000" class="w-full h-10 px-3 text-sm font-mono bg-[var(--muted)] border border-[var(--border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ring)] focus:border-transparent">
+                </div>
+              </div>
+              <div>
+                <button id="refresh-client" type="button" class="inline-flex items-center gap-2 px-4 h-10 text-sm font-medium text-[var(--primary)] bg-[var(--brand-50)] border border-[var(--border)] rounded-md hover:bg-[var(--brand-100)] dark:bg-[var(--brand-900)]/30 dark:hover:bg-[var(--brand-900)]/50 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--ring)]">
+                  <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                  <span>刷新生成客户端</span>
+                </button>
+                <p class="mt-1.5 text-xs text-[var(--muted-foreground)]">重新从 OpenAPI Contract 生成类型化客户端。</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- API Keys -->
+          <section class="bg-[var(--card)] border border-[var(--border)] rounded-lg p-5 shadow-[var(--shadow-1)]">
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="key-round" class="w-5 h-5 text-[var(--primary)]"></i>
+              <h2 class="text-h3">API 密钥</h2>
+            </div>
+            <div class="p-3 mb-4 rounded-md bg-[var(--state-warning-bg)] border border-[var(--state-warning)]/20 text-sm text-[var(--state-warning)] flex items-start gap-2">
+              <i data-lucide="alert-triangle" class="w-4 h-4 mt-0.5 shrink-0"></i>
+              <span>API key 不会被打包到客户端 bundle 中。</span>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <label for="openai-key" class="block text-sm font-medium mb-1.5">OpenAI API Key</label>
+                <div class="relative">
+                  <input id="openai-key" type="password" value="sk-••••••••••••••••••••••••" class="w-full h-10 pl-3 pr-24 text-sm font-mono bg-[var(--muted)] border border-[var(--border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ring)] focus:border-transparent" aria-describedby="openai-help">
+                  <div class="absolute right-1 top-1/2 -translate-y-1/2 flex items-center gap-1">
+                    <button type="button" class="px-2 py-1 text-xs font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--neutral-200)] dark:hover:bg-[var(--neutral-700)] rounded transition-colors" data-toggle="openai-key">显示</button>
+                    <button type="button" class="px-2 py-1 text-xs font-medium text-[var(--primary)] hover:bg-[var(--brand-50)] dark:hover:bg-[var(--brand-900)]/30 rounded transition-colors">更新</button>
+                  </div>
+                </div>
+                <p id="openai-help" class="mt-1.5 text-xs text-[var(--muted-foreground)]">用于驱动研究报告生成与审阅模型。</p>
+              </div>
+              <div>
+                <label for="finsage-key" class="block text-sm font-medium mb-1.5">FinSage API Key</label>
+                <div class="relative">
+                  <input id="finsage-key" type="password" value="fs-••••••••••••••••••••••••" class="w-full h-10 pl-3 pr-24 text-sm font-mono bg-[var(--muted)] border border-[var(--border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ring)] focus:border-transparent" aria-describedby="finsage-help">
+                  <div class="absolute right-1 top-1/2 -translate-y-1/2 flex items-center gap-1">
+                    <button type="button" class="px-2 py-1 text-xs font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--neutral-200)] dark:hover:bg-[var(--neutral-700)] rounded transition-colors" data-toggle="finsage-key">显示</button>
+                    <button type="button" class="px-2 py-1 text-xs font-medium text-[var(--primary)] hover:bg-[var(--brand-50)] dark:hover:bg-[var(--brand-900)]/30 rounded transition-colors">更新</button>
+                  </div>
+                </div>
+                <p id="finsage-help" class="mt-1.5 text-xs text-[var(--muted-foreground)]">用于访问 FinSage 数据服务与企业级数据源。</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Research Defaults -->
+          <section class="bg-[var(--card)] border border-[var(--border)] rounded-lg p-5 shadow-[var(--shadow-1)]">
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="flask-conical" class="w-5 h-5 text-[var(--primary)]"></i>
+              <h2 class="text-h3">研究默认配置</h2>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <label for="default-model" class="block text-sm font-medium mb-1.5">默认模型</label>
+                <div class="relative">
+                  <select id="default-model" class="w-full h-10 pl-3 pr-10 text-sm bg-[var(--muted)] border border-[var(--border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ring)] focus:border-transparent appearance-none">
+                    <option>GPT-4o</option>
+                    <option>GPT-4 Turbo</option>
+                    <option>Claude 3.5 Sonnet</option>
+                    <option>Claude 3 Opus</option>
+                  </select>
+                  <i data-lucide="chevron-down" class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted-foreground)] pointer-events-none"></i>
+                </div>
+              </div>
+              <div>
+                <label for="default-provider" class="block text-sm font-medium mb-1.5">默认 Provider 偏好</label>
+                <div class="relative">
+                  <select id="default-provider" class="w-full h-10 pl-3 pr-10 text-sm bg-[var(--muted)] border border-[var(--border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ring)] focus:border-transparent appearance-none">
+                    <option>自动选择</option>
+                    <option>OpenAI</option>
+                    <option>Anthropic</option>
+                    <option>Azure OpenAI</option>
+                  </select>
+                  <i data-lucide="chevron-down" class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted-foreground)] pointer-events-none"></i>
+                </div>
+              </div>
+              <div>
+                <label for="max-tokens" class="block text-sm font-medium mb-1.5">Max Tokens</label>
+                <input id="max-tokens" type="number" value="4096" min="256" max="128000" step="256" class="w-full h-10 px-3 text-sm font-mono bg-[var(--muted)] border border-[var(--border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ring)] focus:border-transparent">
+              </div>
+              <div>
+                <div class="flex items-center justify-between mb-1.5">
+                  <label for="temperature" class="text-sm font-medium">Temperature</label>
+                  <span id="temperature-value" class="text-xs font-mono text-[var(--muted-foreground)]">0.70</span>
+                </div>
+                <input id="temperature" type="range" min="0" max="2" step="0.05" value="0.7" class="w-full h-2 bg-[var(--neutral-200)] dark:bg-[var(--neutral-700)] rounded-lg appearance-none cursor-pointer">
+              </div>
+            </div>
+          </section>
+
+          <!-- Notification Preferences -->
+          <section class="bg-[var(--card)] border border-[var(--border)] rounded-lg p-5 shadow-[var(--shadow-1)]">
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="bell-ring" class="w-5 h-5 text-[var(--primary)]"></i>
+              <h2 class="text-h3">通知偏好</h2>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-sm font-medium">邮件通知</p>
+                  <p class="text-xs text-[var(--muted-foreground)]">接收每日摘要与重要提醒</p>
+                </div>
+                <label for="email-notify" class="relative inline-flex items-center cursor-pointer">
+                  <input id="email-notify" type="checkbox" class="sr-only peer" checked>
+                  <div class="w-11 h-6 bg-[var(--neutral-200)] dark:bg-[var(--neutral-700)] peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[var(--ring)] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-[var(--neutral-300)] after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[var(--primary)]"></div>
+                </label>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-sm font-medium">浏览器通知</p>
+                  <p class="text-xs text-[var(--muted-foreground)]">允许桌面弹窗提醒</p>
+                </div>
+                <label for="browser-notify" class="relative inline-flex items-center cursor-pointer">
+                  <input id="browser-notify" type="checkbox" class="sr-only peer" checked>
+                  <div class="w-11 h-6 bg-[var(--neutral-200)] dark:bg-[var(--neutral-700)] peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[var(--ring)] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-[var(--neutral-300)] after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[var(--primary)]"></div>
+                </label>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-sm font-medium">任务完成提醒</p>
+                  <p class="text-xs text-[var(--muted-foreground)]">任务生成完毕后立即通知</p>
+                </div>
+                <label for="task-completed-notify" class="relative inline-flex items-center cursor-pointer">
+                  <input id="task-completed-notify" type="checkbox" class="sr-only peer" checked>
+                  <div class="w-11 h-6 bg-[var(--neutral-200)] dark:bg-[var(--neutral-700)] peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[var(--ring)] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-[var(--neutral-300)] after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[var(--primary)]"></div>
+                </label>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-sm font-medium">任务失败提醒</p>
+                  <p class="text-xs text-[var(--muted-foreground)]">任务异常或中断时立即通知</p>
+                </div>
+                <label for="task-failed-notify" class="relative inline-flex items-center cursor-pointer">
+                  <input id="task-failed-notify" type="checkbox" class="sr-only peer" checked>
+                  <div class="w-11 h-6 bg-[var(--neutral-200)] dark:bg-[var(--neutral-700)] peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[var(--ring)] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-[var(--neutral-300)] after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[var(--primary)]"></div>
+                </label>
+              </div>
+            </div>
+          </section>
+
+          <!-- Security Checklist -->
+          <section class="bg-[var(--card)] border border-[var(--border)] rounded-lg p-5 shadow-[var(--shadow-1)]">
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="shield-check" class="w-5 h-5 text-[var(--primary)]"></i>
+              <h2 class="text-h3">安全自检清单</h2>
+            </div>
+            <div class="space-y-3">
+              <label class="flex items-start gap-3 p-3 rounded-md border border-[var(--border)] bg-[var(--muted)]/50 cursor-pointer">
+                <input type="checkbox" class="mt-0.5 w-4 h-4 text-[var(--primary)] bg-[var(--card)] border-[var(--border)] rounded focus:ring-[var(--ring)] focus:ring-2" checked disabled>
+                <div class="flex-1">
+                  <p class="text-sm font-medium">Token 不在源码中</p>
+                  <p class="text-xs text-[var(--muted-foreground)]">会话 token 与密钥通过环境或安全存储注入</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-3 p-3 rounded-md border border-[var(--border)] bg-[var(--muted)]/50 cursor-pointer">
+                <input type="checkbox" class="mt-0.5 w-4 h-4 text-[var(--primary)] bg-[var(--card)] border-[var(--border)] rounded focus:ring-[var(--ring)] focus:ring-2" checked disabled>
+                <div class="flex-1">
+                  <p class="text-sm font-medium">API key 不在客户端 bundle</p>
+                  <p class="text-xs text-[var(--muted-foreground)]">敏感凭据仅保留在服务端或安全 vault</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-3 p-3 rounded-md border border-[var(--border)] bg-[var(--muted)]/50 cursor-pointer">
+                <input type="checkbox" class="mt-0.5 w-4 h-4 text-[var(--primary)] bg-[var(--card)] border-[var(--border)] rounded focus:ring-[var(--ring)] focus:ring-2" checked disabled>
+                <div class="flex-1">
+                  <p class="text-sm font-medium">外部内容不被信任</p>
+                  <p class="text-xs text-[var(--muted-foreground)]">检索与抓取内容需经校验后才能进入推理链</p>
+                </div>
+              </label>
+            </div>
+          </section>
+
+          <!-- Appearance -->
+          <section class="bg-[var(--card)] border border-[var(--border)] rounded-lg p-5 shadow-[var(--shadow-1)] lg:col-span-2">
+            <div class="flex items-center gap-2 mb-4">
+              <i data-lucide="palette" class="w-5 h-5 text-[var(--primary)]"></i>
+              <h2 class="text-h3">外观</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <p class="text-sm font-medium mb-3">主题</p>
+                <div class="grid grid-cols-3 gap-3">
+                  <label class="relative flex flex-col items-center gap-2 p-3 rounded-md border border-[var(--border)] bg-[var(--muted)]/50 hover:bg-[var(--muted)] transition-colors cursor-pointer has-[:checked]:border-[var(--primary)] has-[:checked]:bg-[var(--brand-50)] dark:has-[:checked]:bg-[var(--brand-900)]/20">
+                    <input type="radio" name="theme" value="light" class="sr-only" checked>
+                    <i data-lucide="sun" class="w-5 h-5 text-[var(--muted-foreground)]"></i>
+                    <span class="text-xs font-medium">浅色</span>
+                  </label>
+                  <label class="relative flex flex-col items-center gap-2 p-3 rounded-md border border-[var(--border)] bg-[var(--muted)]/50 hover:bg-[var(--muted)] transition-colors cursor-pointer has-[:checked]:border-[var(--primary)] has-[:checked]:bg-[var(--brand-50)] dark:has-[:checked]:bg-[var(--brand-900)]/20">
+                    <input type="radio" name="theme" value="dark" class="sr-only">
+                    <i data-lucide="moon" class="w-5 h-5 text-[var(--muted-foreground)]"></i>
+                    <span class="text-xs font-medium">深色</span>
+                  </label>
+                  <label class="relative flex flex-col items-center gap-2 p-3 rounded-md border border-[var(--border)] bg-[var(--muted)]/50 hover:bg-[var(--muted)] transition-colors cursor-pointer has-[:checked]:border-[var(--primary)] has-[:checked]:bg-[var(--brand-50)] dark:has-[:checked]:bg-[var(--brand-900)]/20">
+                    <input type="radio" name="theme" value="system" class="sr-only">
+                    <i data-lucide="monitor" class="w-5 h-5 text-[var(--muted-foreground)]"></i>
+                    <span class="text-xs font-medium">跟随系统</span>
+                  </label>
+                </div>
+              </div>
+              <div class="flex items-center justify-between md:px-4 md:border-l md:border-[var(--border)]">
+                <div>
+                  <p class="text-sm font-medium">紧凑密度</p>
+                  <p class="text-xs text-[var(--muted-foreground)]">减小卡片间距以显示更多信息</p>
+                </div>
+                <label for="compact-density" class="relative inline-flex items-center cursor-pointer">
+                  <input id="compact-density" type="checkbox" class="sr-only peer">
+                  <div class="w-11 h-6 bg-[var(--neutral-200)] dark:bg-[var(--neutral-700)] peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[var(--ring)] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-[var(--neutral-300)] after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[var(--primary)]"></div>
+                </label>
+              </div>
+            </div>
+          </section>
+        </form>
+
+        <div class="flex items-center justify-end gap-3 mt-6 pt-6 border-t border-[var(--border)]">
+          <button id="reset-settings" type="button" class="px-5 h-10 text-sm font-medium text-[var(--foreground)] bg-[var(--card)] border border-[var(--border)] rounded-md hover:bg-[var(--muted)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--ring)]">重置</button>
+          <button id="save-settings" type="button" class="px-5 h-10 text-sm font-medium text-white bg-[var(--primary)] rounded-md hover:bg-[var(--brand-800)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--ring)] focus:ring-offset-2 focus:ring-offset-[var(--background)]">保存更改</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    // Toggle password visibility for API keys
+    document.querySelectorAll("[data-toggle]").forEach(button => {
+      button.addEventListener("click", () => {
+        const inputId = button.getAttribute("data-toggle");
+        const input = document.getElementById(inputId);
+        if (input.type === "password") {
+          input.type = "text";
+          button.textContent = "隐藏";
+        } else {
+          input.type = "password";
+          button.textContent = "显示";
+        }
+      });
+    });
+
+    // Copy session ID
+    document.querySelectorAll("[data-copy]").forEach(button => {
+      button.addEventListener("click", () => {
+        const inputId = button.getAttribute("data-copy");
+        const input = document.getElementById(inputId);
+        if (input && navigator.clipboard) {
+          navigator.clipboard.writeText(input.value).then(() => {
+            const original = button.innerHTML;
+            button.innerHTML = '<i data-lucide="check" class="w-4 h-4"></i>';
+            lucide.createIcons();
+            setTimeout(() => { button.innerHTML = original; lucide.createIcons(); }, 1500);
+          });
+        }
+      });
+    });
+
+    // Temperature slider
+    const temperatureInput = document.getElementById("temperature");
+    const temperatureValue = document.getElementById("temperature-value");
+    temperatureInput.addEventListener("input", () => {
+      temperatureValue.textContent = parseFloat(temperatureInput.value).toFixed(2);
+    });
+
+    // Theme toggle (header icon)
+    const themeToggle = document.getElementById("theme-toggle");
+    themeToggle.addEventListener("click", () => {
+      const html = document.documentElement;
+      if (html.classList.contains("dark")) {
+        html.classList.remove("dark");
+        html.classList.add("light");
+      } else {
+        html.classList.remove("light");
+        html.classList.add("dark");
+      }
+    });
+
+    // Refresh generated client button
+    const refreshClient = document.getElementById("refresh-client");
+    refreshClient.addEventListener("click", () => {
+      const icon = refreshClient.querySelector("i");
+      icon.classList.add("animate-spin");
+      setTimeout(() => {
+        icon.classList.remove("animate-spin");
+        alert("已根据 OpenAPI Contract 重新生成类型化客户端。");
+      }, 1200);
+    });
+
+    // Save / Reset placeholders
+    document.getElementById("save-settings").addEventListener("click", () => {
+      alert("设置已保存（演示）。");
+    });
+
+    document.getElementById("reset-settings").addEventListener("click", () => {
+      document.getElementById("settings-form").reset();
+      temperatureValue.textContent = parseFloat(temperatureInput.value).toFixed(2);
+    });
+  </script>
+
+    <style>
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--primary);
+      cursor: pointer;
+      border: 2px solid var(--neutral-0);
+      box-shadow: var(--shadow-1);
+    }
+    input[type="range"]::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--primary);
+      cursor: pointer;
+      border: 2px solid var(--neutral-0);
+      box-shadow: var(--shadow-1);
+    }
+  </style>
+</body>
+</html>

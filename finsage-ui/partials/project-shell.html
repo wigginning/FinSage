@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinSage — {{pageTitle}}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../colors_and_type.css">
+</head>
+<body class="min-h-screen bg-[var(--background)] text-[var(--foreground)] antialiased">
+  <header class="fixed top-0 left-0 right-0 h-14 bg-[var(--card)] border-b border-[var(--border)] z-50 flex items-center justify-between px-4">
+    <div class="flex items-center gap-3">
+      <a href="index.html" class="flex items-center gap-2 text-[var(--primary)] hover:opacity-90 transition-opacity">
+        <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+        <span class="text-lg font-semibold tracking-tight">FinSage</span>
+      </a>
+      <span class="text-[var(--muted-foreground)] text-xs px-2 py-0.5 bg-[var(--muted)] rounded">v3.4</span>
+    </div>
+    <div class="flex-1 max-w-xl mx-6">
+      <div class="relative">
+        <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted-foreground)]"></i>
+        <input type="text" placeholder="搜索公司、文档、研究任务…" class="w-full h-9 pl-9 pr-4 text-sm bg-[var(--muted)] border border-[var(--border)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ring)] focus:border-transparent placeholder:text-[var(--muted-foreground)]">
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <button class="p-2 text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] rounded-md transition-colors" aria-label="通知"><i data-lucide="bell" class="w-5 h-5"></i></button>
+      <button class="p-2 text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] rounded-md transition-colors" aria-label="主题"><i data-lucide="moon" class="w-5 h-5"></i></button>
+      <div class="flex items-center gap-2 pl-3 border-l border-[var(--border)]">
+        <div class="w-8 h-8 rounded-full bg-[var(--primary)] text-white flex items-center justify-center text-sm font-medium">A</div>
+        <span class="text-sm font-medium hidden lg:block">analyst@finsage.io</span>
+      </div>
+    </div>
+  </header>
+  <div class="flex pt-14 min-h-screen">
+    <aside class="fixed top-14 left-0 bottom-0 w-60 bg-[var(--card)] border-r border-[var(--border)] z-40 flex flex-col">
+      <nav class="flex-1 p-3 space-y-1">
+        <a href="index.html" class="nav-item flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors {{activeIndex}}"><i data-lucide="layout-dashboard" class="w-4.5 h-4.5 text-[var(--muted-foreground)]"></i><span>研究工作台</span></a>
+        <a href="companies.html" class="nav-item flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors {{activeCompanies}}"><i data-lucide="building-2" class="w-4.5 h-4.5 text-[var(--muted-foreground)]"></i><span>公司库</span></a>
+        <a href="documents.html" class="nav-item flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors {{activeDocuments}}"><i data-lucide="file-text" class="w-4.5 h-4.5 text-[var(--muted-foreground)]"></i><span>文档库</span></a>
+        <a href="history.html" class="nav-item flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors {{activeHistory}}"><i data-lucide="history" class="w-4.5 h-4.5 text-[var(--muted-foreground)]"></i><span>研究历史</span></a>
+        <div class="pt-4 mt-4 border-t border-[var(--border)]">
+          <a href="settings.html" class="nav-item flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors {{activeSettings}}"><i data-lucide="settings" class="w-4.5 h-4.5 text-[var(--muted-foreground)]"></i><span>设置</span></a>
+        </div>
+      </nav>
+      <div class="p-3 border-t border-[var(--border)]">
+        <div class="px-3 py-2 rounded-md bg-[var(--muted)]">
+          <p class="text-xs text-[var(--muted-foreground)] mb-1">系统状态</p>
+          <div class="flex items-center gap-2 text-xs text-[var(--state-success)]"><span class="w-1.5 h-1.5 rounded-full bg-[var(--state-success)]"></span><span>所有服务正常</span></div>
+        </div>
+      </div>
+    </aside>
+    <main class="flex-1 ml-60 min-h-[calc(100vh-3.5rem)]">
+      <div class="max-w-[1440px] mx-auto p-6">{{mainContent}}</div>
+    </main>
+  </div>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+# FinSage 本地开发编排（FROZEN 中间件：Milvus + etcd + MySQL 8 + Redis；应用可选）
+# 用法：
+#   启动中间件：  docker compose up -d
+#   连带应用：    docker compose --profile app up -d
+# 中间件默认口令仅用于本地开发，生产必须通过环境变量注入并更换。
+services:
+
+  # ---- MySQL 8（FROZEN；库 finsage，collation utf8mb4_0900_ai_ci）----
+  # 镜像标签对齐本机已缓存的同系列补丁版（8.4），避免重复拉取；架构仍为 MySQL 8。
+  mysql:
+    image: mysql:8.4
+    container_name: finsage-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${FIN_DB_ROOT_PASSWORD:-root}
+      MYSQL_DATABASE: finsage
+      MYSQL_USER: ${FIN_DB_USER:-finsage}
+      MYSQL_PASSWORD: ${FIN_DB_PASSWORD:-finsage_dev_pw}
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_0900_ai_ci
+    ports:
+      - "13306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$$MYSQL_ROOT_PASSWORD"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 30s
+
+  # ---- Redis（FROZEN；对齐缓存 redis:7-alpine）----
+  redis:
+    image: redis:7-alpine
+    container_name: finsage-redis
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "6579:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  # ---- etcd（Milvus 依赖）----
+  etcd:
+    image: quay.io/coreos/etcd:v3.5.5
+    container_name: finsage-etcd
+    environment:
+      ETCD_AUTO_COMPACTION_MODE: revision
+      ETCD_AUTO_COMPACTION_RETENTION: "1000"
+      ETCD_QUOTA_BACKEND_BYTES: "4294967296"
+      ETCD_SNAPSHOT_COUNT: "50000"
+    command:
+      - etcd
+      - --advertise-client-urls=http://etcd:2379
+      - --listen-client-urls=http://0.0.0.0:2379
+      - --data-dir=/etcd
+    volumes:
+      - etcd_data:/etcd
+    healthcheck:
+      test: ["CMD", "etcdctl", "endpoint", "health"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  # ---- Milvus（FROZEN；依赖 etcd；对齐缓存 v2.4.6）----
+  milvus:
+    image: milvusdb/milvus:v2.4.6
+    container_name: finsage-milvus
+    command: ["milvus", "run", "standalone"]
+    environment:
+      ETCD_ENDPOINTS: etcd:2379
+      MINIO_ADDRESS: minio:9000
+    volumes:
+      - milvus_data:/var/lib/milvus
+    ports:
+      - "19730:19530"
+      - "19301:9091"
+    depends_on:
+      etcd:
+        condition: service_healthy
+      minio:
+        condition: service_started
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:9091/healthz || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 60s
+
+  # ---- MinIO（Milvus 对象存储；对齐缓存 RELEASE.2023-03-20）----
+  minio:
+    image: minio/minio:RELEASE.2023-03-20T20-16-18Z
+    container_name: finsage-minio
+    environment:
+      MINIO_ACCESS_KEY: minioadmin
+      MINIO_SECRET_KEY: minioadmin
+    command: ["minio", "server", "/minio_data", "--console-address", ":9001"]
+    volumes:
+      - minio_data:/minio_data
+    ports:
+      - "19000:9000"
+      - "19001:9001"
+
+  # ---- 应用（可选：--profile app）----
+  app:
+    build:
+      context: .
+      dockerfile: docker/api/Dockerfile
+    container_name: finsage-api
+    profiles: ["app"]
+    env_file:
+      - .env
+    environment:
+      # 容器内走 docker 服务名访问中间件（.env 的 localhost 仅适用于宿主直跑）。
+      FIN_MILVUS_HOST: milvus
+      FIN_MILVUS_PORT: "19530"
+    volumes:
+      # 只读挂载本地预下载模型（BGE-M3 / Reranker），避免容器内重复下载。
+      - ./resources/models:/app/resources/models:ro
+    ports:
+      - "${FIN_PORT:-8237}:8000"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      milvus:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # ---- 前端（前后端分离，可选：--profile app）----
+  web:
+    build:
+      context: .
+      dockerfile: docker/web/Dockerfile
+    container_name: finsage-web
+    profiles: ["app"]
+    ports:
+      - "${FIN_WEB_PORT:-3200}:3000"
+    depends_on:
+      app:
+        condition: service_started
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
+  redis_data:
+  etcd_data:
+  minio_data:
+  milvus_data:
